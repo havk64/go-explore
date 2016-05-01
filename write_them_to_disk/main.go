@@ -23,8 +23,7 @@ func main() {
 	if err != nil {
 		fmt.Printf("%s", err)
 	}
-	//fmt.Printf("%s", body)
-	error := ioutil.WriteFile("/tmpl/23", body, 0644)
+	error := ioutil.WriteFile("/tmp/23", body, 0644)
 	if error != nil {
 		fmt.Fprintf(os.Stderr, "Something went wrong! \n%v", error)
 	}

@@ -11,6 +11,7 @@ func main() {
 	client := &http.Client{}
 
 	response, err := client.Get("https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc")
+
 	if err != nil {
 		fmt.Printf("%s", err)
 		os.Exit(1)
