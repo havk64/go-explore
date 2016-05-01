@@ -3,13 +3,15 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 )
 
 func check(e error) {
 	if e != nil {
-		fmt.Fprintf(os.Stderr, "Something went wrong!\n%v\n", e)
+		//fmt.Fprintf(os.Stderr, "Something went wrong!\n%v\n", e)
+		log.Fatal(e)
 	}
 }
 
