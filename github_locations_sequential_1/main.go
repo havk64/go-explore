@@ -27,11 +27,16 @@ func check(e error) {
 }
 func fetchData(url string) *json.Decoder {
 	client := &http.Client{}
-	resp, err := client.Get(url)
+	req, err := http.NewRequest("GET", url, nil)
 	check(err)
-	resp.Header.Set("User-Agent", "Holberton_School")
-	resp.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
-	decoder := json.NewDecoder(resp.Body)
+	req.Header.Set("User-Agent", "Holberton_School")
+	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
+	resp, err := client.Do(req)
+	check(err)
+	fmt.Println(req)
+	data := resp.Body
+	//defer resp.Body.Close()
+	decoder := json.NewDecoder(data)
 	return decoder
 }
 
