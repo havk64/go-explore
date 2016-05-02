@@ -26,19 +26,16 @@ func check(e error) {
 	}
 }
 func fetchData(url string) *json.Decoder {
-	fmt.Println(url)
 	client := &http.Client{}
 	resp, err := client.Get(url)
 	check(err)
 	resp.Header.Set("User-Agent", "Holberton_School")
 	resp.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 	decoder := json.NewDecoder(resp.Body)
-	resp.Body.Close()
 	return decoder
 }
 
 func getLocation(url string, login string, name string) map[string]string {
-	fmt.Println(login)
 	var loc user
 	decoder := fetchData(url)
 	error := decoder.Decode(&loc)
@@ -53,7 +50,7 @@ func main() {
 	decoder := fetchData(uri)
 	error := decoder.Decode(&github)
 	check(error)
-	defer fmt.Println("Boooommm ! ! !")
+	defer fmt.Println("BOOOOOMMMMM ! ! !")
 	myarray := []map[string]string{}
 	for _, item := range github.Items {
 		name := item.FullName
