@@ -9,15 +9,13 @@ import (
 )
 
 type users struct {
-	Items []struct {
+	Location string `json:"location"`
+	Items    []struct {
 		FullName string `json:"full_name"`
 		Owner    struct {
 			Login string `json:"login"`
 		}
 	}
-}
-type user struct {
-	Location string `json:"location"`
 }
 
 func check(e error) {
@@ -41,7 +39,7 @@ func fetchData(url string) *json.Decoder {
 }
 
 func getLocation(url string, login string, name string) map[string]string {
-	var loc user
+	var loc users
 	decoder := fetchData(url)
 	error := decoder.Decode(&loc)
 	check(error)
