@@ -60,7 +60,7 @@ func main() {
 		obj := getLocation(u.String(), login, name)
 		myarray = append(myarray, obj)
 	}
-	ar, err := json.Marshal(myarray)
+	ar, err := json.MarshalIndent(myarray, "", "    ")
 	check(err)
 	fmt.Println(string(ar))
 }
