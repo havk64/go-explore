@@ -23,7 +23,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 		index := item.index //Assigning variables from map obj.
 		url := item.url
 		login := item.login
-		go func() { //Go routine
+		go func() { //Goroutine
 			fmt.Printf("Fetching url: %s, ranking: %d \n", url, index+1)
 			data := fetchData(url)
 			ch <- &HttpResponse{index, url, login, data} //Pointers to channel
@@ -44,7 +44,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 	}
 }
 
-/* Functions to meet Sort interface */
+/* Functions to meet Sort interface requirements */
 func (a indexSorter) Len() int           { return len(a) }
 func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
@@ -74,7 +74,7 @@ func main() {
 		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
-		u.Path = "/users" + "/" + login
+		u.Path = "/users/" + login
 		names = append(names, name)
 		obj := &userObject{index: index, url: u.String(), login: login}
 		ghUser = append(ghUser, obj)
