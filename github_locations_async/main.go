@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"sort"
 	"time"
 )
 
@@ -51,7 +52,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 }
 
 func (a indexSorter) Len() int           { return len(a) }
-func (a indexSorter) Swap(i, j int)      { a[i].index, a[j].index = a[j].index, a[i].index }
+func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
 
 func main() {
@@ -84,7 +85,7 @@ func main() {
 		//myarray = append(myarray, obj)
 	}
 	results := asyncHttpGets(ghUser)
-	//sort.Sort(indexSorter(results))
+	sort.Sort(indexSorter(results))
 	for _, item := range results {
 		var loc users
 		//decoder := json.NewDecoder(item.response.Body)

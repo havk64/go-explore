@@ -25,4 +25,4 @@ type userObject struct {
 	login string
 }
 
-type indexSorter []HttpResponse
+type indexSorter []*HttpResponse
