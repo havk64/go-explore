@@ -51,12 +51,19 @@ func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
 
 func main() {
 	start := time.Now()
-	uri := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
-	var github users //Struct of Github API
-	decoder := fetchData(uri)
-	error := decoder.Decode(&github)
+	u, error := url.Parse("https://api.github.com/search/repositories") //Parsing the URL
 	check(error)
-	defer fmt.Printf("BOOOOOMMMMM ! ! !\n30 URLs fetched in %f", time.Since(start).Seconds())
+	q := u.Query() //Getting url.Query() in order to specify the Query
+	q.Add("q", "language:go")
+	q.Add("sort", "stars")
+	q.Add("order", "desc")
+	u.RawQuery = q.Encode() //Encoding the query to make it a encode string
+	fmt.Println(u.String(), time.Since(start))
+	var github users //Struct of Github API
+	decoder := fetchData(u.String())
+	err := decoder.Decode(&github)
+	check(err)
+	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
 	myarray := []map[string]string{} //Initializing empty arrays
 	names := []string{}              //Initializing empty arrays
 	ghUser := []*userObject{}        //Initializing empty arrays of pointers.(to be used as function parameter)
