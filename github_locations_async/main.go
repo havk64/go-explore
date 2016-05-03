@@ -63,7 +63,6 @@ func main() {
 	error := decoder.Decode(&github)
 	check(error)
 	defer fmt.Printf("BOOOOOMMMMM ! ! !\n30 URLs fetched in %f", time.Since(start).Seconds())
-	//urls := []string{}
 	myarray := []map[string]string{}
 	names := []string{}
 	ghUser := []*userObject{}
@@ -76,19 +75,12 @@ func main() {
 		//urls = append(urls, u.String())
 		names = append(names, name)
 		obj := &userObject{index: mindex, url: u.String(), login: login}
-		/*obj := new(userObject)
-		obj.index = mindex
-		obj.login = login
-		obj.url = u.String()*/
 		ghUser = append(ghUser, obj)
-		//obj := getLocation(u.String(), login, name)
-		//myarray = append(myarray, obj)
 	}
 	results := asyncHttpGets(ghUser)
 	sort.Sort(indexSorter(results))
 	for _, item := range results {
 		var loc users
-		//decoder := json.NewDecoder(item.response.Body)
 		decoder := item.data
 		error := decoder.Decode(&loc)
 		check(error)
