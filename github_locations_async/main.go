@@ -14,29 +14,32 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
-func asyncHttpGets(urls []string) []*HttpResponse {
-	ch := make(chan *HttpResponse, len(urls)) // buffered
+func asyncHttpGets(user []userObject) []*HttpResponse {
+	fmt.Println("olha!:", user)
+	ch := make(chan *HttpResponse, len(user)) // buffered
 	responses := []*HttpResponse{}
-	for _, url := range urls {
+	for _, item := range user {
 		go func(url string) {
-			fmt.Printf("Fetching %s \n", url)
+			index := item.index
+			fmt.Printf("Fetching url: %s, number: %d \n", item.url, index)
 			client := &http.Client{}
-			req, err := http.NewRequest("GET", url, nil)
+			req, err := http.NewRequest("GET", item.url, nil)
 			check(err)
 			req.Header.Set("User-Agent", "Holberton_School")
 			req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 			resp, err := client.Do(req)
+			data := json.NewDecoder(resp.Body)
 			//resp.Body.Close()
-			ch <- &HttpResponse{url, resp, err}
-		}(url)
+			ch <- &HttpResponse{index, item.url, item.login, data, err}
+		}(item.url)
 	}
 
 	for {
 		select {
 		case r := <-ch:
-			fmt.Printf("%s was fetched\n", r.url)
+			fmt.Printf("%s number %d was fetched\n", r.url, r.index)
 			responses = append(responses, r)
-			if len(responses) == len(urls) {
+			if len(responses) == len(user) {
 				return responses
 			}
 		case <-time.After(50 * time.Millisecond):
@@ -45,6 +48,11 @@ func asyncHttpGets(urls []string) []*HttpResponse {
 	}
 }
 
+/*
+func (a indexSorter) Len() int           { return len(a) }
+func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
+*/
 func main() {
 	start := time.Now()
 	uri := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
@@ -53,26 +61,32 @@ func main() {
 	error := decoder.Decode(&github)
 	check(error)
 	defer fmt.Printf("BOOOOOMMMMM ! ! !\n30 URLs fetched in %f", time.Since(start).Seconds())
-	urls := []string{}
+	//urls := []string{}
 	myarray := []map[string]string{}
 	names := []string{}
-	for _, item := range github.Items {
+	ghUser := []userObject{}
+	for i, item := range github.Items {
+		mindex := i
 		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users" + "/" + login
-		urls = append(urls, u.String())
+		//urls = append(urls, u.String())
 		names = append(names, name)
+		obj := userObject{index: mindex, url: u.String(), login: login}
+		ghUser = append(ghUser, obj)
 		//obj := getLocation(u.String(), login, name)
 		//myarray = append(myarray, obj)
 	}
-	results := asyncHttpGets(urls)
-	for i, item := range results {
+	results := asyncHttpGets(ghUser)
+	//	sort.Sort(indexSorter(results))
+	for _, item := range results {
 		var loc users
-		decoder := json.NewDecoder(item.response.Body)
+		//decoder := json.NewDecoder(item.response.Body)
+		decoder := item.data
 		error := decoder.Decode(&loc)
 		check(error)
-		obj := map[string]string{"location": loc.Location, "full_name": names[i]}
+		obj := map[string]string{"location": loc.Location, "full_name": names[item.index]}
 		myarray = append(myarray, obj)
 	}
 	ar, err := json.MarshalIndent(myarray, "", "    ")
