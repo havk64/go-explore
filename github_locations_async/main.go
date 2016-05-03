@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"sort"
+	"strconv"
 	"time"
 )
 
@@ -23,7 +24,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 		url := item.url
 		login := item.login
 		go func() { //Go routine
-			fmt.Printf("Fetching url: %s, number: %d \n", url, index)
+			fmt.Printf("Fetching url: %s, ranking: %d \n", url, index+1)
 			data := fetchData(url)
 			ch <- &HttpResponse{index, url, login, data} //Pointers to channel
 		}()
@@ -32,7 +33,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 	for {
 		select {
 		case r := <-ch:
-			fmt.Printf("%s number %d was fetched\n", r.url, r.index)
+			fmt.Printf("%s, ranking %d was fetched\n", r.url, r.index+1)
 			responses = append(responses, r)
 			if len(responses) == len(user) {
 				return responses
@@ -60,23 +61,23 @@ func main() {
 	names := []string{}              //Initializing empty arrays
 	ghUser := []*userObject{}        //Initializing empty arrays of pointers.(to be used as function parameter)
 	for i, item := range github.Items {
-		mindex := i
+		index := i
 		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users" + "/" + login
 		names = append(names, name)
-		obj := &userObject{index: mindex, url: u.String(), login: login}
+		obj := &userObject{index: index, url: u.String(), login: login}
 		ghUser = append(ghUser, obj)
 	}
 	results := asyncHttpGets(ghUser)
-	sort.Sort(indexSorter(results))
+	sort.Sort(indexSorter(results)) //==> Using sort in the Index in order to output in the same order first request.
 	for _, item := range results {
 		var loc users
 		decoder := item.data
 		error := decoder.Decode(&loc)
 		check(error)
-		obj := map[string]string{"location": loc.Location, "full_name": names[item.index]}
+		obj := map[string]string{"location": loc.Location, "full_name": names[item.index], "ranking": strconv.Itoa(item.index + 1)}
 		myarray = append(myarray, obj)
 	}
 	ar, err := json.MarshalIndent(myarray, "", "    ")
