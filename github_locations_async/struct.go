@@ -12,7 +12,8 @@ type users struct {
 	}
 }
 
-type HttpResponse struct {
+//HTTPResponse struct is used to get the make the async requests." */
+type HTTPResponse struct {
 	index int
 	url   string
 	login string
@@ -25,4 +26,4 @@ type userObject struct {
 	login string
 }
 
-type indexSorter []*HttpResponse
+type indexSorter []*HTTPResponse

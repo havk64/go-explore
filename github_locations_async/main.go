@@ -16,9 +16,9 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
-func asyncHttpGets(user []*userObject) []*HttpResponse {
-	ch := make(chan *HttpResponse, len(user)) // buffered
-	responses := []*HttpResponse{}            //Empty Array of Pointers to Struct.
+func asyncHTTPGets(user []*userObject) []*HTTPResponse {
+	ch := make(chan *HTTPResponse, len(user)) // buffered
+	responses := []*HTTPResponse{}            //Empty Array of Pointers to Struct.
 	for _, item := range user {
 		index := item.index //Assigning variables from map obj.
 		url := item.url
@@ -26,7 +26,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 		go func() { //Goroutine
 			fmt.Printf("Fetching url: %s, ranking: %d \n", url, index+1)
 			data := fetchData(url)
-			ch <- &HttpResponse{index, url, login, data} //Pointers to channel
+			ch <- &HTTPResponse{index, url, login, data} //Pointers to channel
 		}()
 	}
 
@@ -79,7 +79,7 @@ func main() {
 		obj := &userObject{index: index, url: u.String(), login: login}
 		ghUser = append(ghUser, obj)
 	}
-	results := asyncHttpGets(ghUser)
+	results := asyncHTTPGets(ghUser)
 	sort.Sort(indexSorter(results)) //==> Using sort in the Index in order to output in the same order first request.
 	for _, item := range results {
 		var loc users
