@@ -17,15 +17,15 @@ func check(e error) {
 }
 func asyncHttpGets(user []*userObject) []*HttpResponse {
 	ch := make(chan *HttpResponse, len(user)) // buffered
-	responses := []*HttpResponse{}
+	responses := []*HttpResponse{}            //Empty Array of Pointers to Struct.
 	for _, item := range user {
-		index := item.index
+		index := item.index //Assigning variables from map obj.
 		url := item.url
 		login := item.login
-		go func() {
+		go func() { //Go routine
 			fmt.Printf("Fetching url: %s, number: %d \n", url, index)
 			data := fetchData(url)
-			ch <- &HttpResponse{index, url, login, data}
+			ch <- &HttpResponse{index, url, login, data} //Pointers to channel
 		}()
 	}
 
@@ -43,6 +43,7 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 	}
 }
 
+/* Functions to meet Sort interface */
 func (a indexSorter) Len() int           { return len(a) }
 func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
@@ -50,14 +51,14 @@ func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
 func main() {
 	start := time.Now()
 	uri := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
-	var github users
+	var github users //Struct of Github API
 	decoder := fetchData(uri)
 	error := decoder.Decode(&github)
 	check(error)
 	defer fmt.Printf("BOOOOOMMMMM ! ! !\n30 URLs fetched in %f", time.Since(start).Seconds())
-	myarray := []map[string]string{}
-	names := []string{}
-	ghUser := []*userObject{}
+	myarray := []map[string]string{} //Initializing empty arrays
+	names := []string{}              //Initializing empty arrays
+	ghUser := []*userObject{}        //Initializing empty arrays of pointers.(to be used as function parameter)
 	for i, item := range github.Items {
 		mindex := i
 		name := item.FullName
@@ -83,12 +84,13 @@ func main() {
 	fmt.Println(string(ar))
 }
 
+/* Function fetchData to make the http requests to Github API */
 func fetchData(url string) *json.Decoder {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	check(err)
 	req.Header.Set("User-Agent", "Holberton_School")
-	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
+	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59") //Authentication on Github API
 	resp, err := client.Do(req)
 	check(err)
 	data := resp.Body
