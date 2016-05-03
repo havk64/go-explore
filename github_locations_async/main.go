@@ -25,16 +25,8 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 		go func() {
 			fmt.Printf("Fetching url: %s, number: %d \n", url, index)
 			data := fetchData(url)
-			/*client := &http.Client{}
-			req, err := http.NewRequest("GET", url, nil)
-			check(err)
-			req.Header.Set("User-Agent", "Holberton_School")
-			req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
-			resp, err := client.Do(req)
-			data := json.NewDecoder(resp.Body)*/
-			//resp.Body.Close()
 			ch <- &HttpResponse{index, url, login, data}
-		}() //(url)
+		}()
 	}
 
 	for {
@@ -72,7 +64,6 @@ func main() {
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users" + "/" + login
-		//urls = append(urls, u.String())
 		names = append(names, name)
 		obj := &userObject{index: mindex, url: u.String(), login: login}
 		ghUser = append(ghUser, obj)
