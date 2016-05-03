@@ -15,23 +15,28 @@ func check(e error) {
 	}
 }
 func asyncHttpGets(user []*userObject) []*HttpResponse {
-	fmt.Println("olha!:", user)
+	//fmt.Println("olha!:", user)
+	fmt.Println(len(user))
 	ch := make(chan *HttpResponse, len(user)) // buffered
 	responses := []*HttpResponse{}
 	for _, item := range user {
+		index := item.index
+		url := item.url
+		login := item.login
+
 		go func(url string) {
-			index := item.index
-			fmt.Printf("Fetching url: %s, number: %d \n", item.url, index)
+			//index := item.index
+			fmt.Printf("Fetching url: %s, number: %d \n", url, index)
 			client := &http.Client{}
-			req, err := http.NewRequest("GET", item.url, nil)
+			req, err := http.NewRequest("GET", url, nil)
 			check(err)
 			req.Header.Set("User-Agent", "Holberton_School")
 			req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 			resp, err := client.Do(req)
 			data := json.NewDecoder(resp.Body)
 			//resp.Body.Close()
-			ch <- &HttpResponse{index, item.url, item.login, data, err}
-		}(item.url)
+			ch <- &HttpResponse{index, url, login, data, err}
+		}(url)
 	}
 
 	for {
@@ -73,11 +78,11 @@ func main() {
 		u.Path = "/users" + "/" + login
 		//urls = append(urls, u.String())
 		names = append(names, name)
-		//obj := userObject{index: mindex, url: u.String(), login: login}
-		obj := new(userObject)
+		obj := &userObject{index: mindex, url: u.String(), login: login}
+		/*obj := new(userObject)
 		obj.index = mindex
 		obj.login = login
-		obj.url = u.String()
+		obj.url = u.String()*/
 		ghUser = append(ghUser, obj)
 		//obj := getLocation(u.String(), login, name)
 		//myarray = append(myarray, obj)
@@ -106,7 +111,7 @@ func fetchData(url string) *json.Decoder {
 	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 	resp, err := client.Do(req)
 	check(err)
-	fmt.Println(req)
+	//fmt.Println(req)
 	data := resp.Body
 	//defer resp.Body.Close()
 	decoder := json.NewDecoder(data)
