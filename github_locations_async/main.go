@@ -14,7 +14,7 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
-func asyncHttpGets(user []userObject) []*HttpResponse {
+func asyncHttpGets(user []*userObject) []*HttpResponse {
 	fmt.Println("olha!:", user)
 	ch := make(chan *HttpResponse, len(user)) // buffered
 	responses := []*HttpResponse{}
@@ -64,7 +64,7 @@ func main() {
 	//urls := []string{}
 	myarray := []map[string]string{}
 	names := []string{}
-	ghUser := []userObject{}
+	ghUser := []*userObject{}
 	for i, item := range github.Items {
 		mindex := i
 		name := item.FullName
@@ -73,7 +73,11 @@ func main() {
 		u.Path = "/users" + "/" + login
 		//urls = append(urls, u.String())
 		names = append(names, name)
-		obj := userObject{index: mindex, url: u.String(), login: login}
+		//obj := userObject{index: mindex, url: u.String(), login: login}
+		obj := new(userObject)
+		obj.index = mindex
+		obj.login = login
+		obj.url = u.String()
 		ghUser = append(ghUser, obj)
 		//obj := getLocation(u.String(), login, name)
 		//myarray = append(myarray, obj)
