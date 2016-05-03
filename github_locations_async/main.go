@@ -77,10 +77,11 @@ func main() {
 		decoder := item.data
 		error := decoder.Decode(&loc)
 		check(error)
+		/* Object to be displayed in the output */
 		obj := map[string]string{"location": loc.Location, "full_name": names[item.index], "ranking": strconv.Itoa(item.index + 1)}
 		myarray = append(myarray, obj)
 	}
-	ar, err := json.MarshalIndent(myarray, "", "    ")
+	ar, err := json.MarshalIndent(myarray, "", "    ") /* Indenting the output(Json Prettifyied) */
 	check(err)
 	fmt.Println(string(ar))
 }
@@ -95,6 +96,6 @@ func fetchData(url string) *json.Decoder {
 	resp, err := client.Do(req)
 	check(err)
 	data := resp.Body
-	decoder := json.NewDecoder(data)
+	decoder := json.NewDecoder(data) // Parsing the JSON Object.
 	return decoder
 }
