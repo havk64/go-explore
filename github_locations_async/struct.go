@@ -17,7 +17,7 @@ type HttpResponse struct {
 	url   string
 	login string
 	data  *json.Decoder
-	err   error
+	//err   error
 }
 type userObject struct {
 	index int

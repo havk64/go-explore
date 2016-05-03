@@ -15,28 +15,25 @@ func check(e error) {
 	}
 }
 func asyncHttpGets(user []*userObject) []*HttpResponse {
-	//fmt.Println("olha!:", user)
-	fmt.Println(len(user))
 	ch := make(chan *HttpResponse, len(user)) // buffered
 	responses := []*HttpResponse{}
 	for _, item := range user {
 		index := item.index
 		url := item.url
 		login := item.login
-
-		go func(url string) {
-			//index := item.index
+		go func() {
 			fmt.Printf("Fetching url: %s, number: %d \n", url, index)
-			client := &http.Client{}
+			data := fetchData(url)
+			/*client := &http.Client{}
 			req, err := http.NewRequest("GET", url, nil)
 			check(err)
 			req.Header.Set("User-Agent", "Holberton_School")
 			req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 			resp, err := client.Do(req)
-			data := json.NewDecoder(resp.Body)
+			data := json.NewDecoder(resp.Body)*/
 			//resp.Body.Close()
-			ch <- &HttpResponse{index, url, login, data, err}
-		}(url)
+			ch <- &HttpResponse{index, url, login, data}
+		}() //(url)
 	}
 
 	for {
@@ -53,11 +50,10 @@ func asyncHttpGets(user []*userObject) []*HttpResponse {
 	}
 }
 
-/*
 func (a indexSorter) Len() int           { return len(a) }
-func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a indexSorter) Swap(i, j int)      { a[i].index, a[j].index = a[j].index, a[i].index }
 func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
-*/
+
 func main() {
 	start := time.Now()
 	uri := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
@@ -88,7 +84,7 @@ func main() {
 		//myarray = append(myarray, obj)
 	}
 	results := asyncHttpGets(ghUser)
-	//	sort.Sort(indexSorter(results))
+	//sort.Sort(indexSorter(results))
 	for _, item := range results {
 		var loc users
 		//decoder := json.NewDecoder(item.response.Body)
@@ -111,9 +107,7 @@ func fetchData(url string) *json.Decoder {
 	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 	resp, err := client.Do(req)
 	check(err)
-	//fmt.Println(req)
 	data := resp.Body
-	//defer resp.Body.Close()
 	decoder := json.NewDecoder(data)
 	return decoder
 }
