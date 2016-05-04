@@ -12,7 +12,7 @@ type users struct {
 	}
 }
 
-//HTTPResponse struct is used to get the make the async requests." */
+// The HTTPResponse struct is used to get the make the async requests."
 type HTTPResponse struct {
 	index int
 	url   string

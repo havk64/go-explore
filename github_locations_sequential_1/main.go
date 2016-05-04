@@ -59,7 +59,7 @@ func main() {
 		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
-		u.Path = "/users" + "/" + login
+		u.Path = "/users/" + login
 		obj := getLocation(u.String(), login, name)
 		myarray = append(myarray, obj)
 	}
