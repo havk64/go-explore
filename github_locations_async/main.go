@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"net/url"
 	"sort"
-	"strconv"
 	"time"
 )
 
@@ -66,9 +65,9 @@ func main() {
 	err := decoder.Decode(&github)
 	check(err)
 	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
-	myarray := []map[string]string{} //Initializing empty arrays
-	names := []string{}              //Initializing empty arrays
-	ghUser := []*userObject{}        //Initializing empty arrays of pointers.(to be used as function parameter)
+	myarray := []map[string]interface{}{} //Initializing empty arrays
+	names := []string{}                   //Initializing empty arrays
+	ghUser := []*userObject{}             //Initializing empty arrays of pointers.(to be used as function parameter)
 	for i, item := range github.Items {
 		index := i
 		name := item.FullName
@@ -87,7 +86,7 @@ func main() {
 		error := decoder.Decode(&loc)
 		check(error)
 		/* Object to be displayed in the output */
-		obj := map[string]string{"location": loc.Location, "full_name": names[item.index], "ranking": strconv.Itoa(item.index + 1)}
+		obj := map[string]interface{}{"location": loc.Location, "full_name": names[item.index], "ranking": (item.index + 1)}
 		myarray = append(myarray, obj)
 	}
 	ar, err := json.MarshalIndent(myarray, "", "    ") /* Indenting the output(Json Prettifyied) */
