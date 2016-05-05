@@ -18,11 +18,9 @@ func main() {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", u.String(), nil)
 	check(err)
-	req.Header = customHeader() //Function to split the header allowing easy customization.
-	fmt.Println(req.Header)
-	//At this point the request object is: *(1) (look below)
-	res, err := client.Do(req)
-	//At this point the response object is: *(2)
+	req.Header = customHeader() // Function to split the header allowing easy customization.
+	fmt.Println(req.Header)     // At this point the request object is: *(1) (look below)
+	res, err := client.Do(req)  // At this point the response object is: *(2)
 	check(err)
 	data, err := ioutil.ReadAll(res.Body)
 	check(err)

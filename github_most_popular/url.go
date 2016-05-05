@@ -18,7 +18,7 @@ func customURL() *url.URL {
 		},
 	}
 
-	u := &url.URL{
+	return &url.URL{
 		Scheme:   "https",
 		Opaque:   "",
 		User:     (*url.Userinfo)(nil),
@@ -28,10 +28,9 @@ func customURL() *url.URL {
 		RawQuery: q.Encode(), //Using the custom Query created above.
 		Fragment: "",
 	}
-	return u
 }
 func customHeader() http.Header {
-	h := http.Header{
+	return http.Header{
 		"User-Agent": []string{
 			"Holberton_School",
 		},
@@ -39,5 +38,4 @@ func customHeader() http.Header {
 			"token 6a54def2525aa32b003337b31487e321d6a2bb59",
 		},
 	}
-	return h
 }
