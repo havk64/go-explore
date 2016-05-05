@@ -26,6 +26,7 @@ func main() {
 	data, err := ioutil.ReadAll(res.Body)
 	check(err)
 	fmt.Println(string(data))
+	defer res.Body.Close()
 	defer fmt.Println("Task executed in: ", time.Since(start))
 }
 
