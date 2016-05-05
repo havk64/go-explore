@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 )
 
 func check(e error) {
@@ -14,17 +15,18 @@ func check(e error) {
 }
 
 func main() {
+	start := time.Now()
 	u := customURL() //Function created to split the url allowing easy customation.
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", u.String(), nil)
+	req, err := http.NewRequest("GET", u.String(), nil) //Creating request.
 	check(err)
 	req.Header = customHeader() // Function to split the header allowing easy customization.
-	fmt.Println(req.Header)     // At this point the request object is: *(1) (look below)
-	res, err := client.Do(req)  // At this point the response object is: *(2)
-	check(err)
+	res, err := client.Do(req)  // At this point the request object is: *(1) (look below)
+	check(err)                  // At this point the response object is: *(2)
 	data, err := ioutil.ReadAll(res.Body)
 	check(err)
 	fmt.Println(string(data))
+	defer fmt.Println("Task executed in: ", time.Since(start))
 }
 
 /* ========================================= *
