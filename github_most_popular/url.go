@@ -6,8 +6,8 @@ import (
 )
 
 func customURL() *url.URL {
-	q := &url.Values{
-		"q": []string{
+	q := &url.Values{ // Custom Query created based in the the type url.Values,
+		"q": []string{ // that is basically: map[string][]string
 			"language:go",
 		},
 		"sort": []string{
@@ -25,7 +25,7 @@ func customURL() *url.URL {
 		Host:     "api.github.com",
 		Path:     "/search/repositories",
 		RawPath:  "",
-		RawQuery: q.Encode(),
+		RawQuery: q.Encode(), //Using the custom Query created above.
 		Fragment: "",
 	}
 	return u
