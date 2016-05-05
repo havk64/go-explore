@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"time"
 )
 
 type users struct {
@@ -23,37 +24,41 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
-func fetchData(url string) *json.Decoder {
+func fetchData(url string) (*json.Decoder, http.Response) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	check(err)
 	req.Header.Set("User-Agent", "Holberton_School")
 	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
-	resp, err := client.Do(req)
+	res, err := client.Do(req)
 	check(err)
-	fmt.Println(req)
-	data := resp.Body
-	//defer resp.Body.Close()
+	data := res.Body
 	decoder := json.NewDecoder(data)
-	return decoder
+	return decoder, *res
 }
 
 func getLocation(url string, login string, name string) map[string]string {
 	var loc users
-	decoder := fetchData(url)
+	decoder, res := fetchData(url)
 	error := decoder.Decode(&loc)
 	check(error)
-	obj := map[string]string{"location": loc.Location, "full_name": name}
+	defer res.Body.Close()
+	obj := map[string]string{
+		"location":  loc.Location,
+		"full_name": name,
+	}
 	return obj
 }
 
 func main() {
-	uri := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
+	start := time.Now()
+	u := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 	var github users
-	decoder := fetchData(uri)
+	decoder, p := fetchData(u)
 	error := decoder.Decode(&github)
 	check(error)
 	defer fmt.Println("BOOOOOMMMMM ! ! !")
+	defer p.Body.Close()
 	myarray := []map[string]string{}
 	for _, item := range github.Items {
 		name := item.FullName
@@ -61,9 +66,11 @@ func main() {
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users/" + login
 		obj := getLocation(u.String(), login, name)
+		fmt.Println("Fetching location of user:", login)
 		myarray = append(myarray, obj)
 	}
 	ar, err := json.MarshalIndent(myarray, "", "    ")
 	check(err)
 	fmt.Println(string(ar))
+	fmt.Println(time.Since(start))
 }
