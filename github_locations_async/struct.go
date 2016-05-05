@@ -1,6 +1,9 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"net/http"
+)
 
 type users struct {
 	Location string `json:"location"`
@@ -18,6 +21,7 @@ type HTTPResponse struct {
 	url   string
 	login string
 	data  *json.Decoder
+	res   http.Response
 	//err   error
 }
 type userObject struct {

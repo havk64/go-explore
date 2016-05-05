@@ -24,8 +24,8 @@ func asyncHTTPGets(user []*userObject) []*HTTPResponse {
 		login := item.login
 		go func() { //Goroutine
 			fmt.Printf("Fetching url: %s, ranking: %d \n", url, index+1)
-			data := fetchData(url)
-			ch <- &HTTPResponse{index, url, login, data} //Pointers to channel
+			data, res := fetchData(url)
+			ch <- &HTTPResponse{index, url, login, data, res} //Pointers to channel
 		}()
 	}
 
@@ -63,10 +63,11 @@ func main() {
 		q.Add("order", "desc")    // In descentant order
 		u.RawQuery = q.Encode()   // Encoding the query to make it a encode string
 	* ===================================================================================== */
-	var github users // Struct of Github API
-	decoder := fetchData(u.String())
+	github := &users{} // Struct of Github API // Before was declared as: `var github users`.
+	decoder, res := fetchData(u.String())
 	err := decoder.Decode(&github)
 	check(err)
+	defer res.Body.Close()
 	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
 	myarray := []map[string]interface{}{} //Initializing empty arrays
 	names := []string{}                   //Initializing empty arrays
@@ -84,10 +85,11 @@ func main() {
 	results := asyncHTTPGets(ghUser)
 	sort.Sort(indexSorter(results)) //==> Using sort in the Index in order to output in the same order first request.
 	for _, item := range results {
-		var loc users
+		loc := &users{} // Before was declared: `var loc users`.
 		decoder := item.data
 		error := decoder.Decode(&loc)
 		check(error)
+		defer item.res.Body.Close()
 		/* Object to be displayed in the output */
 		obj := map[string]interface{}{"location": loc.Location, "full_name": names[item.index], "ranking": (item.index + 1)}
 		myarray = append(myarray, obj)
@@ -98,7 +100,7 @@ func main() {
 }
 
 /* Function fetchData to make the http requests to Github API */
-func fetchData(url string) *json.Decoder {
+func fetchData(url string) (*json.Decoder, http.Response) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	check(err)
@@ -107,5 +109,5 @@ func fetchData(url string) *json.Decoder {
 	check(err)
 	data := resp.Body
 	decoder := json.NewDecoder(data) // Parsing the JSON Object.
-	return decoder
+	return decoder, *resp
 }
