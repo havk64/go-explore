@@ -51,14 +51,14 @@ func getLocation(url string, login string, name string) map[string]string {
 }
 
 func main() {
-	start := time.Now()
+	start := time.Now() //Starting a timer.
 	u := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 	var github users
 	decoder, p := fetchData(u)
 	error := decoder.Decode(&github)
 	check(error)
 	defer fmt.Println("BOOOOOMMMMM ! ! !")
-	defer p.Body.Close()
+	defer p.Body.Close() // Closing the http.response.Body returned as second value of fetchData().
 	myarray := []map[string]string{}
 	for _, item := range github.Items {
 		name := item.FullName
@@ -69,7 +69,7 @@ func main() {
 		fmt.Println("Fetching location of user:", login)
 		myarray = append(myarray, obj)
 	}
-	ar, err := json.MarshalIndent(myarray, "", "    ")
+	ar, err := json.MarshalIndent(myarray, "", "    ") //Output (JSON) indented.
 	check(err)
 	fmt.Println(string(ar))
 	fmt.Println(time.Since(start))
