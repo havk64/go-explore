@@ -17,7 +17,8 @@ func customURL() *url.URL {
 			"desc",
 		},
 	}
-
+	/* We return the reference to url.URL struct, which has the right format to *
+	 * stringify the Url using the encoded reference to url.Values as RawQuery. */
 	return &url.URL{
 		Scheme:   "https",
 		Opaque:   "",
@@ -29,6 +30,8 @@ func customURL() *url.URL {
 		Fragment: "",
 	}
 }
+
+/* Using referent to http.Header Struct to customize our request Header.      */
 func customHeader() http.Header {
 	return http.Header{
 		"User-Agent": []string{
