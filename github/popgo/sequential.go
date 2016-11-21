@@ -1,4 +1,6 @@
-package main
+// Package sequential is a first attempt to format Go doc
+// Discover more Go is a serie of experiments with the Go Language.
+package sequential
 
 import (
 	"encoding/json"
