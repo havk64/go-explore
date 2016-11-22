@@ -1,5 +1,7 @@
-// Package sequential is a first attempt to format Go doc
-// Discover more Go is a serie of experiments with the Go Language.
+// Package sequential fetches most popular Go repositories on github
+// and parses its json response sequentially, without use of concurrency.
+// Go-explore is a sequence of experiments with the Go Language.
+// Here I'm exploring some godoc features to format documentation.
 package sequential
 
 import (
