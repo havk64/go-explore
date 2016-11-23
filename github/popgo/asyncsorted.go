@@ -1,8 +1,11 @@
+// Package asyncsorted fetches the first 30 most popular GitHub repositories
+// about Go language using async http requests and outputs the sorted results.
+//
 // Instructions:
 // The files struct.go and url.go are part of this package and thus are needed
 // to be compiled together.
 // Work in Progress!!!
-package main
+package asyncsorted
 
 import (
 	"encoding/json"
@@ -74,7 +77,7 @@ func main() {
 	check(err)
 	defer res.Body.Close()
 	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
-	var result []*resObj      //Initializing slice of pointers to resObj structs
+	var result []*resObj      //Initializing slice of pointers to resObj struct
 	names := []string{}       //Initializing empty arrays
 	ghUser := []*userObject{} //Initializing empty arrays of pointers.(to be used as function parameter)
 	for i, item := range github.Items {
