@@ -7,15 +7,9 @@ import (
 
 func customURL() *url.URL {
 	q := &url.Values{ // Custom Query created based in the the type url.Values,
-		"q": []string{ // that is basically: map[string][]string
-			"language:go",
-		},
-		"sort": []string{
-			"stars",
-		},
-		"order": []string{
-			"desc",
-		},
+		"q":     {"language:go"},
+		"sort":  {"stars"},
+		"order": {"desc"},
 	}
 	/* We return the reference to url.URL struct, which has the right format to *
 	 * stringify the Url using the encoded reference to url.Values as RawQuery. */
@@ -34,11 +28,8 @@ func customURL() *url.URL {
 /* Using referent to http.Header Struct to customize our request Header.      */
 func customHeader() http.Header {
 	return http.Header{
-		"User-Agent": []string{
-			"Holberton_School",
-		},
-		"Authorization": []string{
-			"token 6a54def2525aa32b003337b31487e321d6a2bb59",
-		},
+		"User-Agent": {"Holberton_School"},
+		"Authorization": {
+			"token 6a54def2525aa32b003337b31487e321d6a2bb59"},
 	}
 }
