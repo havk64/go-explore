@@ -15,13 +15,10 @@ func customURL() *url.URL {
 	 * stringify the Url using the encoded reference to url.Values as RawQuery. */
 	return &url.URL{
 		Scheme:   "https",
-		Opaque:   "",
 		User:     (*url.Userinfo)(nil),
 		Host:     "api.github.com",
 		Path:     "/search/repositories",
-		RawPath:  "",
 		RawQuery: q.Encode(), //Using the custom Query created above.
-		Fragment: "",
 	}
 }
 
