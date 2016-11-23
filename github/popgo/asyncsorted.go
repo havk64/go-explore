@@ -77,10 +77,10 @@ func main() {
 	check(err)
 	defer res.Body.Close()
 	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
-	items := len(github.Items)
-	result := make([]*resObj, items)     //Initializing slice of pointers to resObj struct
-	names := make([]string, items)       //Initializing empty arrays
-	ghUser := make([]*userObject, items) //Initializing empty arrays of pointers.(to be used as function parameter)
+	repos := len(github.Items)
+	result := make([]*resObj, repos)     //Initializing slice of pointers to resObj struct
+	names := make([]string, repos)       //Initializing empty arrays
+	ghUser := make([]*userObject, repos) //Initializing empty arrays of pointers.(to be used as function parameter)
 	for index, item := range github.Items {
 		name := item.FullName
 		login := item.Owner.Login
