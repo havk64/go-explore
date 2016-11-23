@@ -71,7 +71,7 @@ func main() {
 		q.Add("order", "desc")    // In descentant order
 		u.RawQuery = q.Encode()   // Encoding the query to make it a encode string
 	* ===================================================================================== */
-	github := &users{} // Struct of Github API // Before was declared as: `var github users`.
+	github := users{} // Struct of Github API // Before was declared as: `var github users`.
 	decoder, res := fetchData(u.String())
 	err := decoder.Decode(&github)
 	check(err)
