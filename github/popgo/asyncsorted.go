@@ -15,6 +15,7 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
+
 func asyncHTTPGets(user []*userObject) []*HTTPResponse {
 	ch := make(chan *HTTPResponse, len(user)) // buffered
 	responses := []*HTTPResponse{}            //Empty Array of Pointers to Struct.
@@ -69,9 +70,9 @@ func main() {
 	check(err)
 	defer res.Body.Close()
 	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
-	myarray := []map[string]interface{}{} //Initializing empty arrays
-	names := []string{}                   //Initializing empty arrays
-	ghUser := []*userObject{}             //Initializing empty arrays of pointers.(to be used as function parameter)
+	var result []*resObj      //Initializing slice of pointers to resObj structs
+	names := []string{}       //Initializing empty arrays
+	ghUser := []*userObject{} //Initializing empty arrays of pointers.(to be used as function parameter)
 	for i, item := range github.Items {
 		index := i
 		name := item.FullName
@@ -91,13 +92,14 @@ func main() {
 		check(error)
 		defer item.res.Body.Close()
 		/* Object to be displayed in the output */
-		obj := map[string]interface{}{
-			"location":  loc.Location,
-			"full_name": names[item.index],
-			"ranking":   (item.index + 1)}
-		myarray = append(myarray, obj)
+		obj := &resObj{
+			FullName: names[item.index],
+			Location: loc.Location,
+			Ranking:  (item.index + 1),
+		}
+		result = append(result, obj)
 	}
-	ar, err := json.MarshalIndent(myarray, "", "    ") /* Indenting the output(Json Prettifyied) */
+	ar, err := json.MarshalIndent(result, "", "    ") /* Indenting the output(Json Prettifyied) */
 	check(err)
 	fmt.Println(string(ar))
 }
