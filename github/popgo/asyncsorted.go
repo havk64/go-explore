@@ -1,3 +1,7 @@
+// Instructions:
+// The files struct.go and url.go are part of this package and thus are needed
+// to be compiled together.
+// Work in Progress!!!
 package main
 
 import (
