@@ -56,6 +56,19 @@ func (a indexSorter) Len() int           { return len(a) }
 func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
 
+/* Function fetchData to make the http requests to Github API */
+func fetchData(url string) (*json.Decoder, http.Response) {
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", url, nil)
+	check(err)
+	req.Header = customHeader()
+	resp, err := client.Do(req)
+	check(err)
+	data := resp.Body
+	decoder := json.NewDecoder(data) // Parsing the JSON Object.
+	return decoder, *resp
+}
+
 func main() {
 	start := time.Now()
 	u := customURL() // Replacing previous code below with this function.
@@ -111,17 +124,4 @@ func main() {
 	ar, err := json.MarshalIndent(result, "", "    ") /* Indenting the output(Json Prettifyied) */
 	check(err)
 	fmt.Println(string(ar))
-}
-
-/* Function fetchData to make the http requests to Github API */
-func fetchData(url string) (*json.Decoder, http.Response) {
-	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
-	check(err)
-	req.Header = customHeader()
-	resp, err := client.Do(req)
-	check(err)
-	data := resp.Body
-	decoder := json.NewDecoder(data) // Parsing the JSON Object.
-	return decoder, *resp
 }
