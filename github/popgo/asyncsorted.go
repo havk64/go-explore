@@ -91,7 +91,10 @@ func main() {
 		check(error)
 		defer item.res.Body.Close()
 		/* Object to be displayed in the output */
-		obj := map[string]interface{}{"location": loc.Location, "full_name": names[item.index], "ranking": (item.index + 1)}
+		obj := map[string]interface{}{
+			"location":  loc.Location,
+			"full_name": names[item.index],
+			"ranking":   (item.index + 1)}
 		myarray = append(myarray, obj)
 	}
 	ar, err := json.MarshalIndent(myarray, "", "    ") /* Indenting the output(Json Prettifyied) */
