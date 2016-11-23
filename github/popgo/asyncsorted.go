@@ -76,9 +76,6 @@ func main() {
 	  u, error := url.Parse("https://api.github.com/search/repositories") //Parsing the URL
 		check(error)
 		q := u.Query() //Getting url.Query() in order to specify the Query
-		/* This could work too(instead of adding each item to the url.Query() objc. as in next lines):
-		q = map[string][]string{"q": []string{"language:go"}, "sort": []string{"stars"}, "order": []string{"desc"}}
-		>> Next step is to use a struct to build the Query.
 		q.Add("q", "language:go") // Search for all Golang repositories
 		q.Add("sort", "stars")    // Sort by amount of Stars
 		q.Add("order", "desc")    // In descentant order
