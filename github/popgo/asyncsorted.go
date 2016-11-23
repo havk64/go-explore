@@ -5,7 +5,7 @@
 // The files struct.go and url.go are part of this package and thus are needed
 // to be compiled together.
 // Work in Progress!!!
-package asyncsorted
+package main
 
 import (
 	"encoding/json"
@@ -77,11 +77,10 @@ func main() {
 	check(err)
 	defer res.Body.Close()
 	defer fmt.Println("BOOOOOMMMMM ! ! !\n30 URLs fetched in ", time.Since(start))
-	var result []*resObj      //Initializing slice of pointers to resObj struct
-	names := []string{}       //Initializing empty arrays
-	ghUser := []*userObject{} //Initializing empty arrays of pointers.(to be used as function parameter)
-	for i, item := range github.Items {
-		index := i
+	result := make([]*resObj, 30) //Initializing slice of pointers to resObj struct
+	names := []string{}           //Initializing empty arrays
+	ghUser := []*userObject{}     //Initializing empty arrays of pointers.(to be used as function parameter)
+	for index, item := range github.Items {
 		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
@@ -92,19 +91,18 @@ func main() {
 	}
 	results := asyncHTTPGets(ghUser)
 	sort.Sort(indexSorter(results)) //==> Using sort in the Index in order to output in the same order first request.
-	for _, item := range results {
+	for index, item := range results {
 		loc := &users{} // Before was declared: `var loc users`.
 		decoder := item.data
 		error := decoder.Decode(&loc)
 		check(error)
 		defer item.res.Body.Close()
 		/* Object to be displayed in the output */
-		obj := &resObj{
+		result[index] = &resObj{
 			FullName: names[item.index],
 			Location: loc.Location,
 			Ranking:  (item.index + 1),
 		}
-		result = append(result, obj)
 	}
 	ar, err := json.MarshalIndent(result, "", "    ") /* Indenting the output(Json Prettifyied) */
 	check(err)
