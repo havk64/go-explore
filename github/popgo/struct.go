@@ -40,6 +40,3 @@ type resObj struct {
 	Location string `json:"location"`
 	Ranking  int    `json:"ranking"`
 }
-
-// indexSorter is used to be able to sort the final result by the index.
-type indexSorter []*HTTPResponse

@@ -13,7 +13,6 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"sort"
 	"time"
 )
 
@@ -24,8 +23,8 @@ func check(e error) {
 }
 
 func asyncHTTPGets(user []*userObject) []*HTTPResponse {
-	ch := make(chan *HTTPResponse, len(user)) // buffered
-	responses := []*HTTPResponse{}            //Empty Array of Pointers to Struct.
+	ch := make(chan *HTTPResponse, len(user))     // Buffered channel
+	responses := make([]*HTTPResponse, len(user)) // Slice of Pointers to Struct
 	for _, item := range user {
 		index := item.index //Assigning variables from map obj.
 		url := item.url
@@ -36,13 +35,14 @@ func asyncHTTPGets(user []*userObject) []*HTTPResponse {
 			ch <- &HTTPResponse{index, url, login, data, res} //Pointers to channel
 		}()
 	}
-
+	count := 0
 	for {
 		select {
 		case r := <-ch:
 			fmt.Printf("%s, ranking %d was fetched\n", r.url, r.index+1)
-			responses = append(responses, r)
-			if len(responses) == len(user) {
+			responses[r.index] = r
+			count += 1
+			if count == len(user) {
 				return responses
 			}
 		case <-time.After(50 * time.Millisecond):
@@ -50,11 +50,6 @@ func asyncHTTPGets(user []*userObject) []*HTTPResponse {
 		}
 	}
 }
-
-/* Functions to meet Sort interface requirements */
-func (a indexSorter) Len() int           { return len(a) }
-func (a indexSorter) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a indexSorter) Less(i, j int) bool { return a[i].index < a[j].index }
 
 /* Function fetchData to make the http requests to Github API */
 func fetchData(url string) (*json.Decoder, http.Response) {
@@ -104,7 +99,6 @@ func main() {
 		}
 	}
 	results := asyncHTTPGets(ghUser)
-	sort.Sort(indexSorter(results)) //==> Using sort in the Index in order to output in the same order first request.
 	for index, item := range results {
 		loc := &users{} // Before was declared: `var loc users`.
 		decoder := item.data
