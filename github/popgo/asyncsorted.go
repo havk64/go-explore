@@ -23,7 +23,7 @@ func check(e error) {
 }
 
 func asyncHTTPGets(user []*userObject) []*HTTPResponse {
-	ch := make(chan *HTTPResponse, len(user))     // Buffered channel
+	ch := make(chan *HTTPResponse)
 	responses := make([]*HTTPResponse, len(user)) // Slice of Pointers to Struct
 	for _, item := range user {
 		index := item.index //Assigning variables from map obj.
