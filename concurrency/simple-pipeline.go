@@ -16,7 +16,7 @@ func firstStage(num []int) <-chan int {
 	return out
 }
 
-func process(in <-chan int) <-chan int {
+func secondStage(in <-chan int) <-chan int {
 	out := make(chan int)
 	go func() {
 		for n := range in {
@@ -27,12 +27,15 @@ func process(in <-chan int) <-chan int {
 	return out
 }
 
+func finalStage(s []int) {
+	for n := range secondStage(firstStage(s)) {
+		fmt.Println(n)
+	}
+}
+
 func main() {
 	start := time.Now()
 	slice := []int{0,1,2,3,4,5,6,7,8,9}
-
-	for n := range process(firstStage(slice)) {
-		fmt.Println(n)
-	}
+	finalStage(slice)
 	fmt.Printf("%v\n",time.Since(start))
 }
