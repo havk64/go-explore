@@ -35,14 +35,15 @@ func asyncHTTPGets(user []*userObject) []*HTTPResponse {
 			ch <- &HTTPResponse{index, url, login, data, res} //Pointers to channel
 		}()
 	}
-	count := 0
+
 	for {
 		select {
-		case r := <-ch:
-			fmt.Printf("%s, ranking %d was fetched\n", r.url, r.index+1)
-			responses[r.index] = r
-			count += 1
-			if count == len(user) {
+		case r, ok := <-ch:
+			if ok {
+				fmt.Printf("%s, ranking %d was fetched\n", r.url, r.index+1)
+				fmt.Printf("%t\n", ok)
+				responses[r.index] = r
+			} else {
 				return responses
 			}
 		case <-time.After(50 * time.Millisecond):
