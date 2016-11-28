@@ -28,18 +28,24 @@ func process(in <-chan int) <-chan int {
 }
 
 func main() {
-	tick := time.Tick(50 * time.Millisecond)
+	start := time.Now()
+	tick := time.Tick(1 * time.Nanosecond)
 	slice := []int{0,1,2,3,4,5,6,7,8,9}
-	outbound := firstStage(slice)
+
+	ch := firstStage(slice)
+	outbound := process(ch)
 	for {
 		select {
-		case ch, ok := <-outbound:
-			fmt.Printf("%#v, %t\n", ch, ok)
-			if ok == false { return }
+		case res, ok := <-outbound:
+			if ok {
+				fmt.Println(res)
+			} else {
+				fmt.Printf("%v\n", time.Since(start))
+				return
+			}
 		case <-tick:
-			fmt.Println("    .")
-		default:
 			fmt.Printf(".")
 		}
 	}
+
 }
