@@ -54,10 +54,12 @@ func merge(cs ...<-chan int) <-chan int {
 func main() {
 	start := time.Now()
 	slice := []int{0,1,2,3,4,5,6,7,8,9}
+	slice2 := []int{9,8,7,6,5,4,3,2,1,0}
 
 	in := firstStage(slice)
+	in2 := firstStage(slice2)
 	c1 := secondStage(in)
-	c2 := secondStage(in)
+	c2 := secondStage(in2)
 
 	for n := range merge(c1, c2) {
 		fmt.Println(n)
