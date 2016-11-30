@@ -1,3 +1,5 @@
+// Dup1 prints each line that appears more than once in the stdin
+// Using bufio package.
 package main
 
 import (
@@ -9,6 +11,8 @@ import (
 func main() {
 	counts := make(map[string]int)
 	input := bufio.NewScanner(os.Stdin)
+	// Scan advances the Scanner to next token, which will then be
+	// available through Text or Bytes method.
 	for input.Scan() {
 		counts[input.Text()]++
 	}
