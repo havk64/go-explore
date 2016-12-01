@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-type users struct {
+type ghUser struct {
 	Items []struct {
 		FullName string `json:"full_name"`
 	}
@@ -16,17 +16,17 @@ type users struct {
 
 func main() {
 	start := time.Now()
-	response := <-request()
+	var user ghUser
+	<-request(&user)
 
 	defer fmt.Println("Task executed in:", time.Since(start))
-	for _, item := range response.Items {
+	for _, item := range user.Items {
 		fmt.Printf("%s\n", item.FullName)
 	}
 }
 
-func request() <-chan users {
-	ch := make(chan users)
-	var gh users
+func request(user *ghUser) <-chan bool {
+	ch := make(chan bool)
 	go func() {
 		uri := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 		client := &http.Client{}
@@ -45,13 +45,12 @@ func request() <-chan users {
 		}
 
 		defer res.Body.Close()
-		// body, err := ioutil.ReadAll(res.Body)
 		decoder := json.NewDecoder(res.Body)
-		err = decoder.Decode(&gh)
+		err = decoder.Decode(user)
 		if err != nil {
 			log.Fatal(err)
 		}
-		ch <- gh
+		ch <- true
 		close(ch)
 	}()
 	return ch
