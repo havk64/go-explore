@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -33,7 +33,7 @@ func request(user *ghUser) <-chan bool {
 
 		req, err := http.NewRequest("GET", uri, nil) //Creating request.
 		if err != nil {
-			log.Fatal(err)
+			fmt.Fprintf(os.Stderr, "%v", err)
 		}
 
 		req.Header.Set("User-Agent", "Holberton_School")
@@ -41,14 +41,15 @@ func request(user *ghUser) <-chan bool {
 
 		res, err := client.Do(req)
 		if err != nil {
-			log.Fatal(err)
+			fmt.Fprintf(os.Stderr, "%v", err)
+			os.Exit(1)
 		}
 
 		defer res.Body.Close()
 		decoder := json.NewDecoder(res.Body)
 		err = decoder.Decode(user)
 		if err != nil {
-			log.Fatal(err)
+			fmt.Fprintf(os.Stderr, "%v", err)
 		}
 		ch <- true
 		close(ch)
