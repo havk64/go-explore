@@ -1,8 +1,8 @@
-// Package sequential fetches most popular Go repositories on github
-// and parses its json response sequentially, without use of concurrency.
+// This program fetches most popular Go repositories on github
+// and parses its json response sequentially, not concurrently.
 // Go-explore is a sequence of experiments with the Go Language.
 // Here I'm exploring some godoc features to format documentation.
-package sequential
+package main
 
 import (
 	"encoding/json"
