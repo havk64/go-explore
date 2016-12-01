@@ -1,3 +1,7 @@
+// This program fetches the 30 most popular Golang github repos(reversed sorted
+// by stargazers_count) with respective locations.
+// The first request gets the top repos and the second fetches the location of
+// each one to be added to the final sorted result.
 package main
 
 import (
