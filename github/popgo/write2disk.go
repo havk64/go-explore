@@ -1,3 +1,5 @@
+// This program fetch the top Golang Github repositories and writes the results
+// to a file. Using basic concurrency through Goroutines and Channels.
 package main
 
 import (
