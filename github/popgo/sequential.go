@@ -13,14 +13,16 @@ import (
 	"time"
 )
 
+type data struct {
+	FullName string `json:"full_name"`
+	Owner    struct {
+		Login string `json:"login"`
+	}
+}
+
 type users struct {
 	Location string `json:"location"`
-	Items    []struct {
-		FullName string `json:"full_name"`
-		Owner    struct {
-			Login string `json:"login"`
-		}
-	}
+	Items    []data
 }
 
 func fetchData(url string) (*json.Decoder, http.Response) {
