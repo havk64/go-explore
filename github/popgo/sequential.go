@@ -7,9 +7,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"time"
 )
 
@@ -23,19 +23,22 @@ type users struct {
 	}
 }
 
-func check(e error) {
-	if e != nil {
-		log.Fatal(e)
-	}
-}
 func fetchData(url string) (*json.Decoder, http.Response) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
-	check(err)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+	}
+
 	req.Header.Set("User-Agent", "Holberton_School")
 	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
+
 	res, err := client.Do(req)
-	check(err)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+		os.Exit(1)
+	}
+
 	data := res.Body
 	decoder := json.NewDecoder(data)
 	return decoder, *res
@@ -44,8 +47,11 @@ func fetchData(url string) (*json.Decoder, http.Response) {
 func getLocation(url string, login string, name string) map[string]string {
 	var loc users
 	decoder, res := fetchData(url)
-	error := decoder.Decode(&loc)
-	check(error)
+	err := decoder.Decode(&loc)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+	}
+
 	defer res.Body.Close()
 	obj := map[string]string{
 		"location":  loc.Location,
@@ -59,8 +65,11 @@ func main() {
 	u := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 	var github users
 	decoder, p := fetchData(u)
-	error := decoder.Decode(&github)
-	check(error)
+	err := decoder.Decode(&github)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+	}
+
 	defer fmt.Println("BOOOOOMMMMM ! ! !")
 	defer p.Body.Close() // Closing the http.response.Body returned as second value of fetchData().
 	myarray := []map[string]string{}
@@ -73,8 +82,12 @@ func main() {
 		fmt.Println("Fetching location of user:", login)
 		myarray = append(myarray, obj)
 	}
+
 	ar, err := json.MarshalIndent(myarray, "", "    ") //Output (JSON) indented.
-	check(err)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+	}
+
 	fmt.Println(string(ar))
 	fmt.Println(time.Since(start))
 }
