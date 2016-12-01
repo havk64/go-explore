@@ -55,9 +55,8 @@ func request() <-chan []byte {
 		if err != nil {
 			log.Fatal(err)
 		}
-
 		ch <- body
+		close(ch)
 	}()
-
 	return ch
 }
