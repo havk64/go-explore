@@ -53,11 +53,11 @@ func getLocation(url string, login string, name string) map[string]string {
 	}
 
 	defer res.Body.Close()
-	obj := map[string]string{
+	usermap := map[string]string{
 		"location":  loc.Location,
 		"full_name": name,
 	}
-	return obj
+	return usermap
 }
 
 func main() {
@@ -72,18 +72,18 @@ func main() {
 
 	defer fmt.Println("BOOOOOMMMMM ! ! !")
 	defer p.Body.Close() // Closing the http.response.Body returned as second value of fetchData().
-	myarray := []map[string]string{}
-	for _, item := range github.Items {
+	result := make([]map[string]string, len(github.Items))
+	for i, item := range github.Items {
 		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users/" + login
-		obj := getLocation(u.String(), login, name)
+		usermap := getLocation(u.String(), login, name)
 		fmt.Println("Fetching location of user:", login)
-		myarray = append(myarray, obj)
+		result[i] = usermap
 	}
 
-	ar, err := json.MarshalIndent(myarray, "", "    ") //Output (JSON) indented.
+	ar, err := json.MarshalIndent(result, "", "    ") //Output (JSON) indented.
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 	}
