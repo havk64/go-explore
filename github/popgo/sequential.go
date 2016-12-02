@@ -55,7 +55,7 @@ func fetchData(url string, user *users) <-chan bool {
 	return ch
 }
 
-func getLocation(url string, login string, name string) map[string]string {
+func getLocation(url string, name string) map[string]string {
 	var loc users
 	<-fetchData(url, &loc)
 
@@ -79,7 +79,7 @@ func main() {
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users/" + login
-		usermap := getLocation(u.String(), login, name)
+		usermap := getLocation(u.String(), name)
 		fmt.Println("Fetching location of user:", login)
 		result[i] = usermap
 	}
