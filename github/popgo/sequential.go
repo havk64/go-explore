@@ -22,9 +22,12 @@ type data struct {
 
 type users struct {
 	Location string `json:"location"`
-	Items    []data
+	Items    []data // a collection of struct "data"
 }
 
+// fetchData accepts a url and a pointer to "users" struct, fetches the url,
+// decode the json response using "users" struct and return a bool
+// for syncronization.
 func fetchData(url string, user *users) <-chan bool {
 	ch := make(chan bool, 1)
 	client := &http.Client{}
@@ -55,6 +58,8 @@ func fetchData(url string, user *users) <-chan bool {
 	return ch
 }
 
+// getLocation accepts a url and github username, uses fetchData to fetch the
+// location of each user and returns a map with the result.
 func getLocation(url string, name string) map[string]string {
 	var loc users
 	<-fetchData(url, &loc)
