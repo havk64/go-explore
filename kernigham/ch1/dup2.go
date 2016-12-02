@@ -3,8 +3,8 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
 )
 
@@ -33,6 +33,7 @@ func main() {
 		}
 	}
 }
+
 // countLines reads a file and count the total each line appears on it.
 func countLines(f *os.File, counts map[string]int) {
 	input := bufio.NewScanner(f)
