@@ -18,11 +18,18 @@ type data struct {
 	Owner    struct {
 		Login string `json:"login"`
 	}
+	Stars int `json:"stargazers_count"`
 }
 
 type users struct {
 	Location string `json:"location"`
 	Items    []data // a collection of struct "data"
+}
+
+type usermap struct {
+	FullName string `json:"full_name"`
+	Location string `json:"location"`
+	Stars    int    `json:"stars"`
 }
 
 // fetchData accepts a url and a pointer to "users" struct, fetches the url,
@@ -60,13 +67,16 @@ func fetchData(url string, user *users) <-chan bool {
 
 // getLocation accepts a url and github username, uses fetchData to fetch the
 // location of each user and returns a map with the result.
-func getLocation(url string, name string) map[string]string {
+func getLocation(url string, item data) *usermap {
 	var loc users
+	name := item.FullName
+	stars := item.Stars
 	<-fetchData(url, &loc)
 
-	usermap := map[string]string{
-		"location":  loc.Location,
-		"full_name": name,
+	usermap := &usermap{
+		FullName: name,
+		Location: loc.Location,
+		Stars:    stars,
 	}
 	return usermap
 }
@@ -78,13 +88,12 @@ func main() {
 	var github users
 	fetchData(u, &github)
 
-	result := make([]map[string]string, len(github.Items))
+	result := make([]*usermap, len(github.Items))
 	for i, item := range github.Items {
-		name := item.FullName
 		login := item.Owner.Login
 		u, _ := url.Parse("https://api.github.com")
 		u.Path = "/users/" + login
-		usermap := getLocation(u.String(), name)
+		usermap := getLocation(u.String(), item)
 		fmt.Println("Fetching location of user:", login)
 		result[i] = usermap
 	}
