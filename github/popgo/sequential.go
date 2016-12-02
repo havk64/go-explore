@@ -25,7 +25,8 @@ type users struct {
 	Items    []data
 }
 
-func fetchData(url string) (*json.Decoder, http.Response) {
+func fetchData(url string, user *users) <-chan bool {
+	ch := make(chan bool, 1)
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -41,20 +42,23 @@ func fetchData(url string) (*json.Decoder, http.Response) {
 		os.Exit(1)
 	}
 
-	data := res.Body
-	decoder := json.NewDecoder(data)
-	return decoder, *res
-}
-
-func getLocation(url string, login string, name string) map[string]string {
-	var loc users
-	decoder, res := fetchData(url)
-	err := decoder.Decode(&loc)
+	decoder := json.NewDecoder(res.Body)
+	err = decoder.Decode(user)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 	}
 
 	defer res.Body.Close()
+
+	ch <- true
+	close(ch)
+	return ch
+}
+
+func getLocation(url string, login string, name string) map[string]string {
+	var loc users
+	<-fetchData(url, &loc)
+
 	usermap := map[string]string{
 		"location":  loc.Location,
 		"full_name": name,
@@ -63,17 +67,12 @@ func getLocation(url string, login string, name string) map[string]string {
 }
 
 func main() {
+	fmt.Println("Starting...")
 	start := time.Now() //Starting a timer.
 	u := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 	var github users
-	decoder, p := fetchData(u)
-	err := decoder.Decode(&github)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
-	}
+	fetchData(u, &github)
 
-	defer fmt.Println("BOOOOOMMMMM ! ! !")
-	defer p.Body.Close() // Closing the http.response.Body returned as second value of fetchData().
 	result := make([]map[string]string, len(github.Items))
 	for i, item := range github.Items {
 		name := item.FullName

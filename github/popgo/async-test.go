@@ -24,7 +24,7 @@ type data struct {
 
 type users struct {
 	Location string `json:"location"`
-	Items    []data
+	Items    []data // Collection of data structs
 }
 
 type mapuser struct {
