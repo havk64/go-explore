@@ -8,7 +8,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"net/url"
 	"os"
 	"sync"
 	"time"
@@ -80,9 +79,8 @@ func getLocation(url string, item data) *mapuser {
 
 func worker(i int, item data, wg *sync.WaitGroup, result []*mapuser) {
 	login := item.Owner.Login
-	u, _ := url.Parse("https://api.github.com")
-	u.Path = "/users/" + login
-	usermap := getLocation(u.String(), item)
+	url := fmt.Sprintf("https://api.github.com/users/%s", login)
+	usermap := getLocation(url, item)
 	result[i] = usermap
 	defer wg.Done()
 }
