@@ -67,9 +67,13 @@ func getLocation(url string, item data) *mapuser {
 	var loc users
 
 	<-fetchData(url, &loc)
+	if loc.Location == "" {
+		loc.Location = "unspecified"
+	}
+
 	return &mapuser{
-		Location: loc.Location,
 		FullName: item.FullName,
+		Location: loc.Location,
 		Stars:    item.Stars,
 	}
 }
