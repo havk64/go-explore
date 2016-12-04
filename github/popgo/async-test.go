@@ -50,8 +50,7 @@ func fetchData(uri string, user *users) <-chan bool {
 		}
 
 		decoder := json.NewDecoder(res.Body)
-		err = decoder.Decode(user)
-		if err != nil {
+		if err = decoder.Decode(user); err != nil {
 			fmt.Fprintf(os.Stderr, "%v\n", err)
 		}
 
