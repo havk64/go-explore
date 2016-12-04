@@ -47,8 +47,7 @@ func request(user *ghUser) <-chan bool {
 
 		defer res.Body.Close()
 		decoder := json.NewDecoder(res.Body)
-		err = decoder.Decode(user)
-		if err != nil {
+		if err = decoder.Decode(user); err != nil {
 			fmt.Fprintf(os.Stderr, "%v", err)
 		}
 		ch <- true
