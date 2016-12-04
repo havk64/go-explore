@@ -6,11 +6,17 @@ import (
 	"io"
 	"log"
 	"net"
+	"os"
 	"time"
 )
 
 func main() {
-	listener, err := net.Listen("tcp", "localhost:8000")
+	port := "8000"
+	if len(os.Args) > 1 {
+		port = os.Args[1]
+	}
+
+	listener, err := net.Listen("tcp", "localhost:" + port)
 	if err != nil {
 		log.Fatal(err)
 	}
