@@ -1,10 +1,10 @@
 package main
 
 import (
-	"time"
-	"log"
 	"io"
+	"log"
 	"net"
+	"time"
 )
 
 func main() {
@@ -12,6 +12,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
