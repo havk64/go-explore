@@ -2,19 +2,18 @@ package main
 
 import (
 	"fmt"
-	"time"
-	"log"
 	"io"
+	"log"
 	"net"
+	"time"
 )
 
 func main() {
 	listener, err := net.Listen("tcp", "localhost:8000")
-	fmt.Printf("%#v\n", listener)
 	if err != nil {
 		log.Fatal(err)
 	}
-	count := 0
+
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
@@ -22,7 +21,6 @@ func main() {
 			continue
 		}
 		fmt.Printf("%#v, %#v, %v\n", count, conn, conn)
-		count += 1
 		go handleConn(conn) // handle one connection at a time
 	}
 }
