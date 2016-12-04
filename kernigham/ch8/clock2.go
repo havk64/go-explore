@@ -1,3 +1,5 @@
+// Clock is a simple server which responds requests with actual time.
+// This version uses a goroutine to accept concurrent requests.
 package main
 
 import (
