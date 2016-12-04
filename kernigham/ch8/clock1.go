@@ -1,3 +1,4 @@
+// Clock is a simple server which responds requests with actual time.
 package main
 
 import (
