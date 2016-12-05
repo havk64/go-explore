@@ -1,4 +1,5 @@
-// Server 3 echoes the HTTP request
+// Server-lissajous echoes the HTTP request on "/" and serves a lissajous at
+// the "/lissajous" path.
 package main
 
 import (
