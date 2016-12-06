@@ -1,5 +1,7 @@
 // Server-lissajous echoes the HTTP request on "/" and serves a lissajous at
 // the "/lissajous" path.
+// As exercise 1.12 it was added form data parse to allow the param "cycles"
+// to be requested via url. e.g. localhost:8000/lissajous?cycles=20
 package main
 
 import (
@@ -34,9 +36,11 @@ func main() {
 		if err := r.ParseForm(); err != nil {
 			log.Print(err)
 		}
-
+		// Default value
 		cycles := 5
+		// Get cycles value from form data
 		if v := r.FormValue("cycles"); v != "" {
+			// Converts the value to an integer
 			if value, err := strconv.Atoi(v); err == nil {
 				cycles = value
 			}
@@ -46,6 +50,7 @@ func main() {
 	log.Fatal(http.ListenAndServe("localhost:8000", nil))
 }
 
+// handler function echoes several request params to client
 func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%s %s %s\n", r.Method, r.URL, r.Proto)
 	for k, v := range r.Header {
@@ -59,12 +64,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	for k, v := range r.Form {
 		fmt.Fprintf(w, "Form[%q] = %q\n", k, v)
 	}
-	fmt.Fprintf(w, "http request: %#v\n", r)
 }
 
 func lissajous(cycles int, out io.Writer) {
 	const (
-		//cycles  = 5
 		res     = 0.001
 		size    = 100
 		nframes = 64
