@@ -1,3 +1,5 @@
+// http client to fetch and test the Server-lissajous exercise created previously
+// Parameters can be added to url.Values
 package main
 
 import (
@@ -10,7 +12,7 @@ import (
 
 func main() {
 	client := &http.Client{}
-	uri, err := url.Parse("http://localhost:8000/lissajous")
+	uri, err := url.Parse("http://localhost:8000")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing: %v\n", err)
 	}
