@@ -11,20 +11,12 @@ import (
 )
 
 func main() {
-	fileBytes, err := ioutil.ReadFile("books.xml") // Read file into memory
+	AuthorID, err := getAuthorID("books.xml")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	var grbq GoodReadsBookQuery
-
-	if err = xml.Unmarshal(fileBytes, &grbq); err != nil {
-		log.Fatal(err)
-	}
-
-	AuthorID := grbq.Book.Authors[0].ID
-
-	fileBytes, err = ioutil.ReadFile("authorlistbooks.xml")
+	fileBytes, err := ioutil.ReadFile("authorlistbooks.xml")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -106,4 +98,20 @@ func makeHTTPRequest(uri string, AuthorID int, pageNumber int, graq *GoodReadsAu
 	if err = xml.Unmarshal(requestBytes, graq); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func getAuthorID(f string) (int, error) {
+	fileBytes, err := ioutil.ReadFile("books.xml") // Read file into memory
+	if err != nil {
+		return 0, err
+	}
+
+	var grbq GoodReadsBookQuery
+
+	if err = xml.Unmarshal(fileBytes, &grbq); err != nil {
+		return 0, err
+	}
+
+	AuthorID := grbq.Book.Authors[0].ID
+	return AuthorID, nil
 }
