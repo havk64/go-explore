@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
@@ -42,7 +41,8 @@ func main() {
 	pageNumber := 1
 	for totalBooks > endBooks {
 		fmt.Println("_______________________REQUEST________________________")
-		makeHTTPRequest("https://www.goodreads.com/author/list.xml", AuthorID, pageNumber, graq)
+		uri := "https://www.goodreads.com/author/list.xml"
+		makeHTTPRequest(uri, AuthorID, pageNumber, graq)
 		startBooks = graq.Author.Books.Start
 		endBooks = graq.Author.Books.End
 		totalBooks = graq.Author.Books.Total
@@ -85,12 +85,10 @@ func makeHTTPRequest(uri string, AuthorID int, pageNumber int, graq *GoodReadsAu
 		log.Fatal(err)
 	}
 
-	requestBytes, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
 	// Using more idiomatic error handling, restrict scope.
-	if err = xml.Unmarshal(requestBytes, graq); err != nil {
+	// Using NewDecoder allows us to use resp.Body directly without ioutil
+	// Because res.Body is an *http.Response which satisfy io.Reader interface
+	if err = xml.NewDecoder(resp.Body).Decode(graq); err != nil {
 		log.Fatal(err)
 	}
 }
