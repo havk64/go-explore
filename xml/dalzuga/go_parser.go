@@ -37,21 +37,28 @@ func main() {
 
 	fmt.Println(startBooks, endBooks, totalBooks, totalBooks/endBooks)
 
+	results := make(map[int][]string)
 	/* Code below is for pagination, need to code makeHTTPRequest */
 	pageNumber := 1
 	for totalBooks > endBooks {
-		fmt.Println("_______________________REQUEST________________________")
-		uri := "https://www.goodreads.com/author/list.xml"
-		makeHTTPRequest(uri, AuthorID, pageNumber, graq)
-		startBooks = graq.Author.Books.Start
+		makeHTTPRequest(AuthorID, pageNumber, graq)
+		// startBooks = graq.Author.Books.Start
 		endBooks = graq.Author.Books.End
 		totalBooks = graq.Author.Books.Total
-		for _, bookValue := range graq.Author.Books.Book {
-			fmt.Println(bookValue.Title)
+		r := make([]string, len(graq.Author.Books.Book))
+		for i, bookValue := range graq.Author.Books.Book {
+			r[i] = bookValue.Title
 		}
+		results[pageNumber-1] = r
 		pageNumber++
 	}
 
+	for _, v := range results {
+		fmt.Println("_______________________REQUEST________________________")
+		for _, s := range v {
+			fmt.Println(s)
+		}
+	}
 	fmt.Println("Total requests:", pageNumber-1)
 }
 
@@ -59,8 +66,8 @@ func main() {
  * makeHTTPRequest takes the full URL string, makes a request, and parses
  * the XML in the response into the struct pointed to by graq
  */
-func makeHTTPRequest(uri string, AuthorID int, pageNumber int, graq *GoodReadsAuthorQuery) {
-
+func makeHTTPRequest(AuthorID int, pageNumber int, graq *GoodReadsAuthorQuery) {
+	uri := "https://www.goodreads.com/author/list.xml"
 	client := &http.Client{}
 
 	u, err := url.Parse(uri)
