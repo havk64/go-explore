@@ -16,14 +16,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fileBytes, err := ioutil.ReadFile("authorlistbooks.xml")
+	graq, err := parseAuthorBooks("authorlistbooks.xml")
 	if err != nil {
-		log.Fatal(err)
-	}
-
-	var graq GoodReadsAuthorQuery
-
-	if err := xml.Unmarshal(fileBytes, &graq); err != nil {
 		log.Fatal(err)
 	}
 
@@ -47,7 +41,7 @@ func main() {
 	pageNumber := 1
 	for totalBooks > endBooks {
 		fmt.Println("_______________________REQUEST________________________")
-		makeHTTPRequest("https://www.goodreads.com/author/list.xml", AuthorID, pageNumber, &graq)
+		makeHTTPRequest("https://www.goodreads.com/author/list.xml", AuthorID, pageNumber, graq)
 		startBooks = graq.Author.Books.Start
 		endBooks = graq.Author.Books.End
 		totalBooks = graq.Author.Books.Total
@@ -101,7 +95,7 @@ func makeHTTPRequest(uri string, AuthorID int, pageNumber int, graq *GoodReadsAu
 }
 
 func getAuthorID(f string) (int, error) {
-	fileBytes, err := ioutil.ReadFile("books.xml") // Read file into memory
+	fileBytes, err := ioutil.ReadFile(f) // Read file into memory
 	if err != nil {
 		return 0, err
 	}
@@ -114,4 +108,19 @@ func getAuthorID(f string) (int, error) {
 
 	AuthorID := grbq.Book.Authors[0].ID
 	return AuthorID, nil
+}
+
+func parseAuthorBooks(f string) (*GoodReadsAuthorQuery, error) {
+	fileBytes, err := ioutil.ReadFile(f)
+	if err != nil {
+		return nil, err
+	}
+
+	var graq GoodReadsAuthorQuery
+
+	if err := xml.Unmarshal(fileBytes, &graq); err != nil {
+		return nil, err
+	}
+
+	return &graq, nil
 }
