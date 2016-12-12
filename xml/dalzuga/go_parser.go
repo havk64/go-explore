@@ -12,14 +12,15 @@ import (
 
 func main() {
 	fileBytes, err := ioutil.ReadFile("books.xml") // Read file into memory
-
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	var grbq GoodReadsBookQuery
 
-	err = xml.Unmarshal(fileBytes, &grbq)
+	if err = xml.Unmarshal(fileBytes, &grbq); err != nil {
+		log.Fatal(err)
+	}
 
 	AuthorID := grbq.Book.Authors[0].ID
 
@@ -30,7 +31,9 @@ func main() {
 
 	var graq GoodReadsAuthorQuery
 
-	err = xml.Unmarshal(fileBytes, &graq)
+	if err := xml.Unmarshal(fileBytes, &graq); err != nil {
+		log.Fatal(err)
+	}
 
 	for _, bookValue := range graq.Author.Books.Book {
 		fmt.Println(bookValue.Title)
@@ -99,9 +102,8 @@ func makeHTTPRequest(uri string, AuthorID int, pageNumber int, graq *GoodReadsAu
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	err = xml.Unmarshal(requestBytes, graq)
-	if err != nil {
+	// Using more idiomatic error handling, restrict scope.
+	if err = xml.Unmarshal(requestBytes, graq); err != nil {
 		log.Fatal(err)
 	}
 }
