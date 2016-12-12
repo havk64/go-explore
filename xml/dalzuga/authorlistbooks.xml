@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+   <Request>
+      <authentication>true</authentication>
+      <key><![CDATA[kDkKnUxiz8cRBJhVjrtSA]]></key>
+      <method><![CDATA[author_list]]></method>
+   </Request>
+   <author>
+      <id>4</id>
+      <name>Douglas Adams</name>
+      <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+      <books start="1" end="30" total="76">
+         <book>
+            <id type="integer">11</id>
+            <isbn>0345391802</isbn>
+            <isbn13>9780345391803</isbn13>
+            <text_reviews_count type="integer">14476</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)</title>
+            <image_url>https://images.gr-assets.com/books/1327656754m/11.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1327656754s/11.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/11.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages>216</num_pages>
+            <format>Mass Market Paperback</format>
+            <edition_information />
+            <publisher>Del Rey Books</publisher>
+            <publication_day>27</publication_day>
+            <publication_year>1995</publication_year>
+            <publication_month>9</publication_month>
+            <average_rating>4.20</average_rating>
+            <ratings_count>956938</ratings_count>
+            <description>Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last fifteen years, has been posing as an out-of-work actor.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Together this dynamic pair begin a journey through space aided by quotes from The Hitchhiker's Guide ("A towel is about the most massively useful thing an interstellar hitchhiker can have") and a galaxy-full of fellow travelers: Zaphod Beeblebrox--the two-headed, three-armed ex-hippie and totally out-to-lunch president of the galaxy; Trillian, Zaphod's girlfriend (formally Tricia McMillan), whom Arthur tried to pick up at a cocktail party once upon a time zone; Marvin, a paranoid, brilliant, and chronically depressed robot; Veet Voojagig, a former graduate student who is obsessed with the disappearance of all the ballpoint pens he bought over the years.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1995</published>
+         </book>
+         <book>
+            <id type="integer">13</id>
+            <isbn>0345453743</isbn>
+            <isbn13>9780345453747</isbn13>
+            <text_reviews_count type="integer">3309</text_reviews_count>
+            <title>The Ultimate Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy #1-5)</title>
+            <image_url>https://images.gr-assets.com/books/1404613595m/13.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1404613595s/13.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/13.The_Ultimate_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages>815</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Del Rey Books</publisher>
+            <publication_day>30</publication_day>
+            <publication_year>2002</publication_year>
+            <publication_month>4</publication_month>
+            <average_rating>4.37</average_rating>
+            <ratings_count>228305</ratings_count>
+            <description>At last in paperback in one complete volume, here are the five novels from Douglas Adams's Hitchhiker series. &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;"The Hitchhiker's Guide to the Galaxy"&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Seconds before the Earth is demolished for a galactic freeway, Arthur Dent is saved by Ford Prefect, a researcher for the revised Guide. Together they stick out their thumbs to the stars and begin a wild journey through time and space.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;"The Restaurant at the End of the Universe"&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Facing annihilation at the hands of warmongers is a curious time to crave tea. It could only happen to the cosmically displaced Arthur Dent and his comrades as they hurtle across the galaxy in a desperate search for a place to eat.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;"Life, the Universe and Everything"&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;The unhappy inhabitants of planet Krikkit are sick of looking at the night sky- so they plan to destroy it. The universe, that is. Now only five individuals can avert Armageddon: mild-mannered Arthur Dent and his stalwart crew.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;"So Long, and Thanks for All the Fish"&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Back on Earth, Arthur Dent is ready to believe that the past eight years were all just a figment of his stressed-out imagination. But a gift-wrapped fishbowl with a cryptic inscription conspires to thrust him back to reality. So to speak.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;"Mostly Harmless"&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Just when Arthur Dent makes the terrible mistake of starting to enjoy life, all hell breaks loose. Can he save the Earth from total obliteration? Can he save the Guide from a hostile alien takeover? Can he save his daughter from herself?&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Also includes the short story "Young Zaphod Plays It Safe".</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2002</published>
+         </book>
+         <book>
+            <id type="integer">8695</id>
+            <isbn>0345418921</isbn>
+            <isbn13>9780345418920</isbn13>
+            <text_reviews_count type="integer">2460</text_reviews_count>
+            <title>The Restaurant at the End of the Universe (Hitchhiker's Guide to the Galaxy, #2)</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/8695.The_Restaurant_at_the_End_of_the_Universe</link>
+            <num_pages>250</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Del Rey</publisher>
+            <publication_day>23</publication_day>
+            <publication_year>1997</publication_year>
+            <publication_month>6</publication_month>
+            <average_rating>4.21</average_rating>
+            <ratings_count>157816</ratings_count>
+            <description>Facing annihilation at the hands of the warlike Vogons is a curious time to have a craving for tea. It could only happen to the cosmically displaced Arthur Dent and his curious comrades in arms as they hurtle across space powered by pure improbabilityband desperately in search of a place to eat.&amp;lt;br /&amp;gt;Among Arthur's motley shipmates are Ford Prefect, a longtime friend and expert contributor to the Hitchhiker's Guide to the Galaxy; Zaphod Beeblebrox, the three-armed, two-headed ex-president of the galaxy; Tricia McMillan, a fellow Earth refugee who's gone native (her name is Trillian now); and Marvin, the moody android who suffers nothing and no one very gladly. Their destination? The ultimate hot spot for an evening of apocalyptic entertainment and fine dining, where the food (literally) speaks for itself.&amp;lt;br /&amp;gt;Will they make it? The answer: hard to say. But bear in mind that the Hitchhiker's Guide deleted the term "Future Perfect" from its pages, since it was discovered not to be!&amp;lt;br /&amp;gt;"What's such fun is how amusing the galaxy looks through Adams' sardonically silly eyes."&amp;lt;br /&amp;gt;</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1997</published>
+         </book>
+         <book>
+            <id type="integer">8694</id>
+            <isbn>0345418905</isbn>
+            <isbn13>9780345418906</isbn13>
+            <text_reviews_count type="integer">1469</text_reviews_count>
+            <title>Life, the Universe and Everything (Hitchhiker's Guide to the Galaxy, #3)</title>
+            <image_url>https://images.gr-assets.com/books/1333577589m/8694.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1333577589s/8694.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/8694.Life_the_Universe_and_Everything</link>
+            <num_pages>224</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Del Rey</publisher>
+            <publication_day>26</publication_day>
+            <publication_year>2005</publication_year>
+            <publication_month>4</publication_month>
+            <average_rating>4.18</average_rating>
+            <ratings_count>131514</ratings_count>
+            <description>The unhappy inhabitants of planet Krikkit are sick of looking at the night sky above their heads–so they plan to destroy it. The universe, that is. Now only five individuals stand between the killer robots of Krikkit and their goal of total annihilation.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;They are Arthur Dent, a mild-mannered space and time traveler who tries to learn how to fly by throwing himself at the ground and missing; Ford Prefect, his best friend, who decides to go insane to see if he likes it; Slartibartfast, the indomitable vice president of the Campaign for Real Time, who travels in a ship powered by irrational behavior; Zaphod Beeblebrox, the two-headed, three-armed ex-president of the galazy; and Trillian, the sexy space cadet who is torn between a persistent Thunder God and a very depressed Beeblebrox.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;How will it all end? Will it end? Only this stalwart crew knows as they try to avert “universal” Armageddon and save life as we know it–and don’t know it!</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2005</published>
+         </book>
+         <book>
+            <id type="integer">8698</id>
+            <isbn>0330491237</isbn>
+            <isbn13>9780330491235</isbn13>
+            <text_reviews_count type="integer">1300</text_reviews_count>
+            <title>So Long, and Thanks for All the Fish (Hitchhiker's Guide to the Galaxy, #4)</title>
+            <image_url>https://images.gr-assets.com/books/1369563116m/8698.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1369563116s/8698.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/8698.So_Long_and_Thanks_for_All_the_Fish</link>
+            <num_pages>167</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Picador USA</publisher>
+            <publication_day>8</publication_day>
+            <publication_year>2002</publication_year>
+            <publication_month>3</publication_month>
+            <average_rating>4.07</average_rating>
+            <ratings_count>100815</ratings_count>
+            <description>Back on Earth with nothing more to show for his long, strange trip through time and space than a ratty towel and a plastic shopping bag, Arthur Dent is ready to believe that the past eight years were all just a figment of his stressed-out imagination. But a gift-wrapped fishbowl with a cryptic inscription, the mysterious disappearance of Earth's dolphins, and the discovery of his battered copy of The Hitchhiker's Guide to the Galaxy all conspire to give Arthur the sneaking suspicion that something otherworldly is indeed going on. . . .&amp;lt;br /&amp;gt;God only knows what it all means. And fortunately, He left behind a Final Message of explanation. But since it's light-years away from Earth, on a star surrounded by souvenir booths, finding out what it is will mean hitching a ride to the far reaches of space aboard a UFO with a giant robot. But what else is new?</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2002</published>
+         </book>
+         <book>
+            <id type="integer">365</id>
+            <isbn>0671746723</isbn>
+            <isbn13>9780671746728</isbn13>
+            <text_reviews_count type="integer">1590</text_reviews_count>
+            <title>Dirk Gently's Holistic Detective Agency (Dirk Gently #1)</title>
+            <image_url>https://images.gr-assets.com/books/1404697381m/365.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1404697381s/365.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/365.Dirk_Gently_s_Holistic_Detective_Agency</link>
+            <num_pages>306</num_pages>
+            <format>Mass Market Paperback</format>
+            <edition_information />
+            <publisher />
+            <publication_day>1</publication_day>
+            <publication_year>1991</publication_year>
+            <publication_month>6</publication_month>
+            <average_rating>3.97</average_rating>
+            <ratings_count>89914</ratings_count>
+            <description>What do a dead cat, a computer whiz-kid, an Electric Monk who believes the world is pink, quantum mechanics, a Chronologist over 200 years old, Samuel Taylor Coleridge (poet), and pizza have in common? Apparently not much; until Dirk Gently, self-styled private investigator, sets out to prove the fundamental interconnectedness of all things by solving a mysterious murder, assisting a mysterious professor, unravelling a mysterious mystery, and eating a lot of pizza – not to mention saving the entire human race from extinction along the way (at no extra charge). To find out more, read this book (better still, buy it, then read it) – or contact Dirk Gently’s Holistic Detective Agency. ‘A thumping good detective-ghost-horror-whodunnit-time travel-romantic-musical-comedy epic.’ The author</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1991</published>
+         </book>
+         <book>
+            <id type="integer">360</id>
+            <isbn>0345418778</isbn>
+            <isbn13>9780345418777</isbn13>
+            <text_reviews_count type="integer">1196</text_reviews_count>
+            <title>Mostly Harmless (Hitchhiker's Guide to the Galaxy, #5)</title>
+            <image_url>https://images.gr-assets.com/books/1320725132m/360.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1320725132s/360.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/360.Mostly_Harmless</link>
+            <num_pages>240</num_pages>
+            <format>Mass Market Paperback</format>
+            <edition_information />
+            <publisher>Ballantine / Del Rey / Fawcett / Ivy</publisher>
+            <publication_day />
+            <publication_year>2000</publication_year>
+            <publication_month>2</publication_month>
+            <average_rating>3.96</average_rating>
+            <ratings_count>77567</ratings_count>
+            <description>It’s easy to get disheartened when your planet has been blown up, the woman you love has vanished in a misunderstanding about space/time, the spaceship you are on crashes on a remote and Bob-fearing planet, and all you have to fall back on is a few simple sandwich-making skills. However, instead of being disheartened, Arthur Dent makes the terrible mistake of starting to enjoy life a bit and, immediately, all hell breaks loose.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Hell takes a number of forms: there’s the usual Ford Prefect form of hell, fresh hell in the form of an all-new version of &amp;lt;i&amp;gt;The Hitchhiker’s Guide to the Galaxy&amp;lt;/i&amp;gt;, and a totally unexpected hell in the form of a teenage girl who startles Arthur Dent by being his daughter when he didn’t even know he had one.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Can Arthur save the Earth from total multidimensional obliteration? Can he save the &amp;lt;i&amp;gt;Guide&amp;lt;/i&amp;gt; from a hostile alien takeover? Can he save his daughter, Random, from herself? &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Of course not. He never works out what is going on, exactly. Will you?</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2000</published>
+         </book>
+         <book>
+            <id type="integer">357</id>
+            <isbn>0671742515</isbn>
+            <isbn13>9780671742515</isbn13>
+            <text_reviews_count type="integer">1027</text_reviews_count>
+            <title>The Long Dark Tea-Time of the Soul (Dirk Gently, #2)</title>
+            <image_url>https://images.gr-assets.com/books/1388257271m/357.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1388257271s/357.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/357.The_Long_Dark_Tea_Time_of_the_Soul</link>
+            <num_pages>307</num_pages>
+            <format>Mass Market Paperback</format>
+            <edition_information />
+            <publisher />
+            <publication_day />
+            <publication_year />
+            <publication_month />
+            <average_rating>4.05</average_rating>
+            <ratings_count>59336</ratings_count>
+            <description>When a passenger check-in desk at London's Heathrow Airport disappears in a ball of orange flame, the explosion is deemed an act of God. But which god, wonders holistic detective Dirk Gently? What god would be hanging around Heathrow trying to catch the 3:37 to Oslo? And what has this to do with Dirk's latest--and late-- client, found only this morning with his head revolving atop the hit record "Hot Potato"? Amid the hostile attentions of a stray eagle and the trauma of a very dirty refrigerator, super-sleuth Dirk Gently will once again solve the mysteries of the universe...</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published />
+         </book>
+         <book>
+            <id type="integer">841628</id>
+            <isbn>0330316117</isbn>
+            <isbn13>9780330316118</isbn13>
+            <text_reviews_count type="integer">320</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: A Trilogy in Four Parts</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages>590</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Pan Books</publisher>
+            <publication_day />
+            <publication_year>1992</publication_year>
+            <publication_month />
+            <average_rating>4.51</average_rating>
+            <ratings_count>27175</ratings_count>
+            <description>&amp;lt;i&amp;gt;Charting the whole of Arthur Dent's odyssey through space are:&amp;lt;/i&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;THE HITCHHIKER'S GUIDE TO THE GALAXY.&amp;lt;br /&amp;gt;One Thursday lunchtime the Earth gets unexpectedly demolished to make way for a new hyperspace bypass. For Arthur Dent, who has only just had his house demolished that morning, this seems already to be more than he can cope with. Sadly, however, the weekend has only just begun, and the Galaxy is a very very very large and startling place.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;THE RESTAURANT AT THE END OF THE UNIVERSE.&amp;lt;br /&amp;gt;When all questions of space, time, matter and the nature of being have been resolved, only one question remains --- "Where shall we have dinner?" The Restaurant at the End of the Universe provides the ultimate gastronomic experience, and for once there is no morning after to worry about.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;LIFE, THE UNIVERSE AND EVERYTHING.&amp;lt;br /&amp;gt;In consequence of a number of stunning catastrophes, Arthur Dent is surprised to find himself living in a hideously miserable cave on prehistoric Earth. However, just as he thinks that things cannot possibly get any worse, they suddenly do. He discovers that the Galaxy is not only mind-boggling big and bewildering but also that most of the things that happen in it are staggeringly unfair.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;SO LONG, AND THANKS FOR ALL THE FISH.&amp;lt;br /&amp;gt;Just as Arthur Dent's sense of reality is in its dickiest state he suddenly finds the girl of his dreams. He finds her in the last place in the Universe in which he would expect to find anything at all, but which 3,976,000 people will find oddly familiar. They go in search of God's Final Message to His Creation and, in a dramatic break with tradition, actually find it.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1992</published>
+         </book>
+         <book>
+            <id type="integer">359</id>
+            <isbn>0345455290</isbn>
+            <isbn13>9780345455291</isbn13>
+            <text_reviews_count type="integer">589</text_reviews_count>
+            <title>The Salmon of Doubt (Dirk Gently, #3)</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/359.The_Salmon_of_Doubt</link>
+            <num_pages>298</num_pages>
+            <format>Mass Market Paperback</format>
+            <edition_information />
+            <publisher>Del Rey</publisher>
+            <publication_day>26</publication_day>
+            <publication_year>2005</publication_year>
+            <publication_month>4</publication_month>
+            <average_rating>3.92</average_rating>
+            <ratings_count>21332</ratings_count>
+            <description>Douglas Adams changed the face of science fiction with his cosmically comic novel &amp;lt;i&amp;gt;The Hitchhiker’s Guide to the Galaxy&amp;lt;/i&amp;gt; and its classic sequels. Sadly for his countless admirers, he hitched his own ride to the great beyond much too soon. Culled posthumously from Adams’s fleet of beloved Macintosh computers, this selection of essays, articles, anecdotes, and stories offers a fascinating and intimate portrait of the multifaceted artist and absurdist wordsmith.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Join Adams on an excursion to climb Kilimanjaro…dressed in a rhino costume; peek into the private life of Genghis Khan—warrior and world-class neurotic; root for the harried author’s efforts to get a &amp;lt;i&amp;gt;Hitchhiker&amp;lt;/i&amp;gt; movie off the ground in Hollywood; thrill to the further exploits of private eye Dirk Gently and two-headed alien Zaphod Beeblebrox. Though Douglas Adams is gone, he’s left us something very special to remember him by. Without a doubt.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2005</published>
+         </book>
+         <book>
+            <id type="integer">8696</id>
+            <isbn>0345371984</isbn>
+            <isbn13>9780345371980</isbn13>
+            <text_reviews_count type="integer">634</text_reviews_count>
+            <title>Last Chance to See</title>
+            <image_url>https://images.gr-assets.com/books/1327867839m/8696.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1327867839s/8696.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/8696.Last_Chance_to_See</link>
+            <num_pages>256</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Ballantine Books</publisher>
+            <publication_day>13</publication_day>
+            <publication_year>1992</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.32</average_rating>
+            <ratings_count>14148</ratings_count>
+            <description>"Very funny and moving...The glimpses of rare fauna seem to have enlarged [Adams'] thinking, enlivened his world; and so might the animals do for us all, if we were to help them live."&amp;lt;br /&amp;gt;THE WASHINGTON POST BOOK WORLD&amp;lt;br /&amp;gt;Join bestselling author Douglas Adams and zooligist Mark Carwardine as they take off around the world in search of exotic, endangered creatures. Hilarious and poignant--as only Douglas Adams can be--LAST CHANCE TO SEE is an entertaining and arresting odyssey through the Earth's magnificent wildlife galaxy.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1992</published>
+         </book>
+         <book>
+            <id type="integer">15847717</id>
+            <isbn>5511976873</isbn>
+            <isbn13>9785511976877</isbn13>
+            <text_reviews_count type="integer">86</text_reviews_count>
+            <title>Young Zaphod Plays It Safe</title>
+            <image_url>https://images.gr-assets.com/books/1345895161m/15847717.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1345895161s/15847717.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/15847717-young-zaphod-plays-it-safe</link>
+            <num_pages>146</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Book On Demand Ltd.</publisher>
+            <publication_day>3</publication_day>
+            <publication_year>2012</publication_year>
+            <publication_month>3</publication_month>
+            <average_rating>3.66</average_rating>
+            <ratings_count>15116</ratings_count>
+            <description>Young Zaphod Plays it Safe is a novella by Douglas Adams set in his The Hitchhiker's Guide to the Galaxy universe. It doesn't appear as a standalone work, but is included with several collections. The story is a prequel to the events in The Hitchhiker's Guide To The Galaxy and has the young Zaphod Beeblebrox working as a salvage ship operator. He guides some bureaucrats to a crashed spaceship which may be leaking some hazardous materials. The bureaucrats are determined to "make it safe". The comic asides in the story include some of the time travel paradoxes which are a common running theme in Adams' SF work, and plenty of material about lobsters</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2012</published>
+         </book>
+         <book>
+            <id type="integer">372299</id>
+            <isbn>0434003484</isbn>
+            <isbn13>9780434003488</isbn13>
+            <text_reviews_count type="integer">211</text_reviews_count>
+            <title>The Hitch Hiker's Guide to the Galaxy: A Trilogy in Five Parts</title>
+            <image_url>https://images.gr-assets.com/books/1322913171m/372299.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1322913171s/372299.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/372299.The_Hitch_Hiker_s_Guide_to_the_Galaxy</link>
+            <num_pages>776</num_pages>
+            <format>Hardcover</format>
+            <edition_information />
+            <publisher>Heinemann</publisher>
+            <publication_day>16</publication_day>
+            <publication_year>1995</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.41</average_rating>
+            <ratings_count>8065</ratings_count>
+            <description>* The Hitchhiker's Guide to the Galaxy&amp;lt;br /&amp;gt;* The Restaurant at the End of the Universe&amp;lt;br /&amp;gt;* Life, the Universe and Everything&amp;lt;br /&amp;gt;* So Long, and Thanks for all the Fish&amp;lt;br /&amp;gt;* Mostly Harmless&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Suppose a good friend calmly told you over a round of drinks that the world was about to end? And suppose your friend went on to confess that he wasn't from around here at all, but rather from a small planet near Betelgeuse? And what if the world really did come to an end, but instead of being blown away, you found yourself hitching a ride on a spaceship with your buddy as a travelling companion?&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;It happens to Arthur Dent.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;An ordinary guy from a small town in England, Arthur is one lucky sonofagun: his alien friend, Ford Prefect, is in fact a roving researcher for the universally bestselling Hitchhiker's Guide to the Galaxy ... and expert at seeing the cosmos on 30 Altairian dollars a day. Ford lives by the Guide's seminal bit of advice: Don't Panic. Which comes in handy when their first ride--on the very same vessel that demolished Earth to make way for a hyperspacial freeway--ends disastrously (they are booted out of an airlock). with 30 seconds of air in their lungs and the odd of being picked up by another ship 2^276,709 to 1 against, the pair are scooped up by the only ship in the universe powered by the Infinite Improbability Drive.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;But this (and the idea that Bogart movies and McDonald's hamburgers now exist only in his mind) is just the beginning of the weird things Arthur will have to get used to. For, on his travels, he'll encounter Zaphod Beeblebrox, the two-headed, three-armed ex-President of the Galaxy; Trillian, a sexy spacecadet he once tried to pick up at a cocktail party, now Zaphod's girlfriend; Marvin, a chronically depressed robot; and Slartibartfast, the award-winning engineer who built the Earth and travels in a spaceship disguised as a bistro.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Arthur's crazed wanderings will take him from the restaurant at the end of the Universe (where the main dish of the day introduces itself and the floor show is doomsday), to the planet Krikkit (locked in Slo-Time to punish its inhabitants for trying to end the Universe), to Earth (huh? wait! wasn't it destroyed?!) to the very offices of The Hitchhiker's Guide itself as he and his friends quest for the answer to the Question of Life, the Universe and Everything ... and search for a really good cup of tea.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Ready or not, Arthur Dent is in for one hell of a ride!</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1995</published>
+         </book>
+         <book>
+            <id type="integer">286041</id>
+            <isbn>0434009199</isbn>
+            <isbn13>9780434009190</isbn13>
+            <text_reviews_count type="integer">45</text_reviews_count>
+            <title>The Dirk Gently Omnibus</title>
+            <image_url>https://images.gr-assets.com/books/1374680916m/286041.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1374680916s/286041.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/286041.The_Dirk_Gently_Omnibus</link>
+            <num_pages>512</num_pages>
+            <format>Hardcover</format>
+            <edition_information />
+            <publisher>William Heinemann</publisher>
+            <publication_day>2</publication_day>
+            <publication_year>2001</publication_year>
+            <publication_month>8</publication_month>
+            <average_rating>4.20</average_rating>
+            <ratings_count>6263</ratings_count>
+            <description>Dirk Gently is a detective - well, a sort of detective. There is a long and honourable tradition of great detectives and Dirk Gently does not belong to it. Sherlock Holmes observed that once you have eliminated the impossible, then whatever remains, however improbable, must be the truth. Dirk Gently, however, does not like to eliminate the impossible.In Dirk Gently's Holistic Detective Agency a simple search for a missing cat reveals two ghosts, a dodo, an Electric Monk, the devastating secret that lies behind the whole of human history and threatens to bring it to a premature close, and, finally, the utterly terrifying reason why Richard MacDuff has had a sofa stuck on his stairs for three weeks.As The Long Dark Tea-Time of the Soul opens a passenger check-in desk at Terminal Two, Heathrow Airport, shoots up through the roof engulfed in a ball of orange flame. The usual people try to claim responsibility. However, no rational cause can be found for the explosion - it was simply designated an act of God. But, thinks Dirk Gently, which God? And why? What God would be hanging around Terminal Two of Heathrow Airport trying to catch the 15.37 to Oslo?&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;What do a dead cat, a computer whizz-kid, an electric monk, quantum mechanics, a chronologit over 200 years old, Samuel Taylor Coleridge, and pizza have in common? Apparently not much, until Dirk Gently begins his investigation.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2001</published>
+         </book>
+         <book>
+            <id type="integer">2323</id>
+            <isbn>0563477881</isbn>
+            <isbn13>9780563477884</isbn13>
+            <text_reviews_count type="integer">59</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: The Primary Phase (Hitchhiker's Guide: Radio Play, #1)</title>
+            <image_url>https://images.gr-assets.com/books/1342376924m/2323.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1342376924s/2323.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/2323.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages>0</num_pages>
+            <format>Audio CD</format>
+            <edition_information />
+            <publisher>BBC Books</publisher>
+            <publication_day>2</publication_day>
+            <publication_year>2001</publication_year>
+            <publication_month>4</publication_month>
+            <average_rating>4.54</average_rating>
+            <ratings_count>5759</ratings_count>
+            <description>The most useful advice ever given, 'Don't panic', can be found within the &amp;lt;i&amp;gt;Hitch-Hiker's Guide to the Galaxy&amp;lt;/i&amp;gt;. The day aliens decide to demolish the Earth to make way for a hyperspace bypass is the day when Arthur Dent realises the futility of such advice. The story begins when Arthur, not really your average man-in-the-street, finds that his planet is suddenly destroyed around him, and the great hitch-hike begins... Starring Peter Jones as The Book, Simon Jones as Arthur Dent and Geoffrey McGivern as Ford Prefect, this is the first Douglas Adams' legendary radio series.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;3 CDs. 3 hrs.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2001</published>
+         </book>
+         <book>
+            <id type="integer">8224898</id>
+            <isbn>1408466740</isbn>
+            <isbn13>9781408466742</isbn13>
+            <text_reviews_count type="integer">294</text_reviews_count>
+            <title>The Hitchhikers Guide to the Galaxy Live</title>
+            <image_url>https://images.gr-assets.com/books/1331721983m/8224898.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1331721983s/8224898.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/8224898-the-hitchhikers-guide-to-the-galaxy-live</link>
+            <num_pages />
+            <format>Audio CD</format>
+            <edition_information />
+            <publisher>BBC Audiobooks</publisher>
+            <publication_day />
+            <publication_year>2010</publication_year>
+            <publication_month />
+            <average_rating>4.04</average_rating>
+            <ratings_count>3966</ratings_count>
+            <description>This is a special 'live' adaptation of Douglas Adams' "Hitchhiker's Guide to the Galaxy" scripts, written and produced by Dirk Maggs, and performed in front of an audience at London's South Bank Centre. The cast inclues Simon Jones as Arthur Dent, Geoffrey McGivern as Ford Prefect, Mark Wing-Davey as Zapgod Beeblebrox, Susan Sheridan as Trillian, and Stephen Moore as Marvin the Paranoid Android. Andrew Sachs will provide The Voice of the Book.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2010</published>
+         </book>
+         <book>
+            <id type="integer">2322</id>
+            <isbn>0307236013</isbn>
+            <isbn13>9780307236012</isbn13>
+            <text_reviews_count type="integer">64</text_reviews_count>
+            <title>The Deeper Meaning of Liff</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/2322.The_Deeper_Meaning_of_Liff</link>
+            <num_pages>192</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>Three Rivers Press</publisher>
+            <publication_day>19</publication_day>
+            <publication_year>2005</publication_year>
+            <publication_month>4</publication_month>
+            <average_rating>3.92</average_rating>
+            <ratings_count>3730</ratings_count>
+            <description>Does the sensation of &amp;lt;b&amp;gt;Tingrith&amp;lt;/b&amp;gt;(1) make you yelp? Do you bend sympathetically when you see someone &amp;lt;b&amp;gt;Ahenny&amp;lt;/b&amp;gt;(2)? Can you deal with a&amp;lt;b&amp;gt; Naugatuck&amp;lt;/b&amp;gt;(3) without causing a &amp;lt;b&amp;gt;Toronto&amp;lt;/b&amp;gt;(4)? Will you suffer from&amp;lt;b&amp;gt; Kettering&amp;lt;/b&amp;gt;(5) this summer? &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Probably. You are almost certainly familiar with all these experiences but just didn’t know that there are words for them. Well, in fact, there aren’t—or rather there weren’t, until Douglas Adams and John Lloyd decided to plug these egregious linguistic &amp;lt;b&amp;gt;lacunae&amp;lt;/b&amp;gt;(6). They quickly realized that just as there are an awful lot of experiences that no one has a name for, so there are an awful lot of names for places you will never need to go to. What a waste. As responsible citizens of a small and crowded world, we must all learn the virtues of recycling(7) and put old, worn-out but still serviceable names to exciting, vibrant, new uses. This is the book that does that for you: &amp;lt;i&amp;gt;The Deeper Meaning of Liff&amp;lt;/i&amp;gt;—a whole new solution to the problem of &amp;lt;b&amp;gt;Great Wakering&amp;lt;/b&amp;gt;(8)&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;1—The feeling of aluminum foil against your fillings.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;2—The way people stand when examining other people’s bookshelves.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;3—A plastic packet containing shampoo, mustard, etc., which is impossible to open except by biting off &amp;lt;br /&amp;gt;the corners.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;4—Generic term for anything that comes out in a gush, despite all your efforts to let it out carefully, e.g., flour into a white sauce, ketchup onto fish, a dog into the yard, and another naughty meaning that we can’t put on the cover.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;5—The marks left on your bottom and thighs after you’ve been sitting sunbathing in a wicker chair.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;6—God knows what this means&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;7—For instance, some of this book was first published in Britain twenty-six years ago.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;8—Look it up yourself.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2005</published>
+         </book>
+         <book>
+            <id type="integer">64123</id>
+            <isbn>0517693119</isbn>
+            <isbn13>9780517693117</isbn13>
+            <text_reviews_count type="integer">135</text_reviews_count>
+            <title>The More Than Complete Hitchhiker's Guide (Hitchhiker's Guide, #1-4 + short story)</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/64123.The_More_Than_Complete_Hitchhiker_s_Guide</link>
+            <num_pages>624</num_pages>
+            <format>Hardcover</format>
+            <edition_information />
+            <publisher>Bonanza Books</publisher>
+            <publication_day>16</publication_day>
+            <publication_year>1989</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.58</average_rating>
+            <ratings_count>2957</ratings_count>
+            <description>Includes the first four books and the short story "Young Zaphod Plays it Safe."</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1989</published>
+         </book>
+         <book>
+            <id type="integer">64119</id>
+            <isbn>0330281216</isbn>
+            <isbn13>9780330281218</isbn13>
+            <text_reviews_count type="integer">96</text_reviews_count>
+            <title>The Meaning of Liff</title>
+            <image_url>https://images.gr-assets.com/books/1333887539m/64119.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1333887539s/64119.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/64119.The_Meaning_of_Liff</link>
+            <num_pages>191</num_pages>
+            <format>Paperback</format>
+            <edition_information />
+            <publisher>MacMillan General Books</publisher>
+            <publication_day>1</publication_day>
+            <publication_year>1983</publication_year>
+            <publication_month>11</publication_month>
+            <average_rating>3.94</average_rating>
+            <ratings_count>3048</ratings_count>
+            <description>In life and, indeed, in liff, there are many hundreds of common experiences, feelings, situations and even objects which we all know and recognize, but for which no words exist. This text uses place names to describe some of these meanings.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1983</published>
+         </book>
+         <book>
+            <id type="integer">140422</id>
+            <isbn>0517883848</isbn>
+            <isbn13>9780517883846</isbn13>
+            <text_reviews_count type="integer">28</text_reviews_count>
+            <title>The Original Hitchhiker Radio Scripts</title>
+            <image_url>https://images.gr-assets.com/books/1404607028m/140422.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1404607028s/140422.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/140422.The_Original_Hitchhiker_Radio_Scripts</link>
+            <num_pages>248</num_pages>
+            <format>Paperback</format>
+            <edition_information>10th Anniversary Edition</edition_information>
+            <publisher>Harmony Books</publisher>
+            <publication_day>4</publication_day>
+            <publication_year>1995</publication_year>
+            <publication_month>4</publication_month>
+            <average_rating>4.54</average_rating>
+            <ratings_count>1246</ratings_count>
+            <description>The legendary BBC series did indeed push back the barriers of radio comedy, and in so doing so spawned records, books, a stage production, a TV series, a computer adventure game, even a towel, and attracted a deluge of letters from curious audiences throughout the world.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;To satisfy this curiosity, here are the twelve original radio scripts – Hitch-Hiker as it was originally written, and exactly as it was broadcast on Radio 4 for the very first time. They include amendments and additions made during recordings, bits which were reluctantly cut for reasons of time, and notes on the writing and producing of the series by Douglas Adams and Geoffrey Perkins.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;For those who have always longed to know why, who, how, when, where, and what its all about, these scripts are essential reading.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1995</published>
+         </book>
+         <book>
+            <id type="integer">613099</id>
+            <isbn>0517552000</isbn>
+            <isbn13>9780517552001</isbn13>
+            <text_reviews_count type="integer">30</text_reviews_count>
+            <title>The Hitchhiker's Trilogy (Hitchhiker's Guide, #1-3)</title>
+            <image_url>https://images.gr-assets.com/books/1360319462m/613099.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1360319462s/613099.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/613099.The_Hitchhiker_s_Trilogy</link>
+            <num_pages>468</num_pages>
+            <format>Hardcover</format>
+            <edition_information />
+            <publisher>Harmony</publisher>
+            <publication_day>9</publication_day>
+            <publication_year>1985</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.43</average_rating>
+            <ratings_count>1240</ratings_count>
+            <description />
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1985</published>
+         </book>
+         <book>
+            <id type="integer">589113</id>
+            <isbn>0563504196</isbn>
+            <isbn13>9780563504191</isbn13>
+            <text_reviews_count type="integer">29</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: The Complete Radio Series (Hitchhiker's Guide: Radio Play, #1-5)</title>
+            <image_url>https://images.gr-assets.com/books/1327186301m/589113.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1327186301s/589113.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/589113.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages>0</num_pages>
+            <format>Audio CD</format>
+            <edition_information />
+            <publisher>BBC Radio Collection</publisher>
+            <publication_day />
+            <publication_year />
+            <publication_month />
+            <average_rating>4.62</average_rating>
+            <ratings_count>1043</ratings_count>
+            <description>This really is the ultimate answer to Life, the Universe, and Everything—all five radio series of &amp;lt;i&amp;gt;The Hitchhiker's Guide to the Galaxy&amp;lt;/i&amp;gt; collected together for the first time, in a handsome box with magnetic lid. From the original Primary and Secondary Phases, through to the more recent Tertiary, Quandary, and Quintessential Phases, these are the adventures of Arthur Dent, Ford Prefect, Zaphod Beeblebrox, and their assorted human, robotic, and alien companions. These full-cast BBC Radio 4 dramas star Simon Jones, Peter Jones, Geoffrey McGivern, Mark Wing-Davey, Stephen Moore, and Susan Sheridan, with a stellar guest cast including John le Mesurier, Joanna Lumley, Christian Slater, Jackie Mason, Sandra Dickinson, Rula Lenska, Griff Rhys Jones, and Jonathan Pryce. Also included is an exclusive bonus disc containing two programs from the BBC Archive: &amp;lt;i&amp;gt;Kaleidoscope&amp;lt;/i&amp;gt; from 1980 (going behind the scenes of the second series) and &amp;lt;i&amp;gt;Six Characters in Search of an Answer: Arthur Dent&amp;lt;/i&amp;gt; from 2002.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;14 CDs. 14 hrs 45 mins.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published />
+         </book>
+         <book>
+            <id type="integer">6125323</id>
+            <isbn>1602835454</isbn>
+            <isbn13>9781602835450</isbn13>
+            <text_reviews_count type="integer">19</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: The Secondary Phase (Hitchhiker's Guide: Radio Play, #2)</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/6125323-the-hitchhiker-s-guide-to-the-galaxy</link>
+            <num_pages>0</num_pages>
+            <format>Audio CD</format>
+            <edition_information />
+            <publisher>Audiogo</publisher>
+            <publication_day>20</publication_day>
+            <publication_year>2009</publication_year>
+            <publication_month>1</publication_month>
+            <average_rating>4.47</average_rating>
+            <ratings_count>580</ratings_count>
+            <description>Stranded on Prehistoric Earth since the end of the first series, Arthur Dent and Ford Prefect are once again trying to hitch their way off the planet. Zaphod Beeblebrox, meanwhile, finds his visit to the offices of the Guide rudely interrupted by Frogstar fighters, who further threaten to feed him to the Total Perspective Vortex. Could this prove fatal for his ego? With the three reunited, Arthur's preoccupation with tea soon gets them all into hot water before they fetch up on the planet Brontitall. There they find an enormous guano-encrusted statue of Arthur, and an indigenous species in something of a flap. As a woeful story of economic collapse at the hands (feet?) of the shoe shop industry unfolds, Arthur meets Lintilla--for whom fate has in store a very unhappy marriage--and Marvin gets to be a hero once again. All this culminates in a meeting with the Man in the Shack who apparently runs the Universe. These original BBC Radio episodes star Simon Jones, Geoffrey McGivern, Mark Wing-Davey, Susan Sheridan and a full supporting cast.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2009</published>
+         </book>
+         <book>
+            <id type="integer">834762</id>
+            <isbn>0563510846</isbn>
+            <isbn13>9780563510840</isbn13>
+            <text_reviews_count type="integer">22</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: The Tertiary Phase (Hitchhiker's Guide: Radio Play, #3)</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/834762.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages />
+            <format />
+            <edition_information />
+            <publisher />
+            <publication_day />
+            <publication_year />
+            <publication_month />
+            <average_rating>4.37</average_rating>
+            <ratings_count>586</ratings_count>
+            <description />
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published />
+         </book>
+         <book>
+            <id type="integer">6037238</id>
+            <isbn>3453406931</isbn>
+            <isbn13>9783453406933</isbn13>
+            <text_reviews_count type="integer">5</text_reviews_count>
+            <title>Per Anhalter durch die Galaxis/Das Restaurant am Ende des Universums (Per Anhalter durch die Galaxis, #1-2)</title>
+            <image_url>https://images.gr-assets.com/books/1342863277m/6037238.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1342863277s/6037238.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/6037238-per-anhalter-durch-die-galaxis-das-restaurant-am-ende-des-universums</link>
+            <num_pages>431</num_pages>
+            <format />
+            <edition_information>Einmalige Sonderausgabe</edition_information>
+            <publisher />
+            <publication_day />
+            <publication_year />
+            <publication_month />
+            <average_rating>4.31</average_rating>
+            <ratings_count>566</ratings_count>
+            <description />
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published />
+         </book>
+         <book>
+            <id type="integer">17</id>
+            <isbn>1572704888</isbn>
+            <isbn13>9781572704886</isbn13>
+            <text_reviews_count type="integer">18</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: Quandary Phase (Hitchhiker's Guide: Radio Play, #4)</title>
+            <image_url>https://images.gr-assets.com/books/1328748024m/17.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1328748024s/17.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/17.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages />
+            <format>Audio CD</format>
+            <edition_information>Dramatization edition; unabridged</edition_information>
+            <publisher>BBC Audiobooks</publisher>
+            <publication_day>25</publication_day>
+            <publication_year>2005</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.33</average_rating>
+            <ratings_count>517</ratings_count>
+            <description>Many are familiar with Douglas Adams's classic &amp;lt;i&amp;gt;Hitchhiker's Guide to the Galaxy&amp;lt;/i&amp;gt; series, but few know that these books started out as a multi-part series performed on BBC radio. This installment, part four, is a robust radio dramatization of &amp;lt;i&amp;gt;So Long and Thanks for All the Fish.&amp;lt;/i&amp;gt; The Earth has miraculously reappeared and Arthur Dent is in love with the otherworldly Fenchurch, but Ford Prefect has an idea that might burst Arthur’s happy little bubble. What is really going on with Arthur’s dream girl, where have all the dolphins gone, and what was their departing message to mankind?</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2005</published>
+         </book>
+         <book>
+            <id type="integer">1473012</id>
+            <isbn>1602833060</isbn>
+            <isbn13>9781602833067</isbn13>
+            <text_reviews_count type="integer">14</text_reviews_count>
+            <title>The Hitchhiker's Guide to the Galaxy: The Quintessential Phase (Hitchhiker's Guide: Radio Play, #5)</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/1473012.The_Hitchhiker_s_Guide_to_the_Galaxy</link>
+            <num_pages />
+            <format>Audio CD</format>
+            <edition_information />
+            <publisher>BBC Audiobooks</publisher>
+            <publication_day>1</publication_day>
+            <publication_year>2007</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.39</average_rating>
+            <ratings_count>489</ratings_count>
+            <description>Panic! It's the last installment of The Hitchhiker's Guide to the Galaxy, with a brand new full-cast dramatization of Mostly Harmless, the final book in Douglas Adams' famous "trilogy in five parts." While frequent flyer Arthur Dent searches the universe for his lost love, Ford Prefect discovers a disturbing blast from the past at. The Hitchhiker's Guide HQ. Meanwhile, on one of many versions of Earth, a blonder, more American Trillian gets tangled up with a party of lost aliens having an identity crisis. A stolen ship, a dramatic stampede, and a new and sinister Guide lead to a race to save the earth. . .again.</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2007</published>
+         </book>
+         <book>
+            <id type="integer">8710</id>
+            <isbn>0517599244</isbn>
+            <isbn13>9780517599242</isbn13>
+            <text_reviews_count type="integer">13</text_reviews_count>
+            <title>The Illustrated Hitchhiker's Guide To The Galaxy</title>
+            <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+            <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/8710.The_Illustrated_Hitchhiker_s_Guide_To_The_Galaxy</link>
+            <num_pages>96</num_pages>
+            <format>Hardcover</format>
+            <edition_information />
+            <publisher>Harmony</publisher>
+            <publication_day>11</publication_day>
+            <publication_year>1994</publication_year>
+            <publication_month>10</publication_month>
+            <average_rating>4.26</average_rating>
+            <ratings_count>271</ratings_count>
+            <description />
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1994</published>
+         </book>
+         <book>
+            <id type="integer">841643</id>
+            <isbn>1844350398</isbn>
+            <isbn13>9781844350391</isbn13>
+            <text_reviews_count type="integer">16</text_reviews_count>
+            <title>Doctor Who: Shada</title>
+            <image_url>https://images.gr-assets.com/books/1384016343m/841643.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1384016343s/841643.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/841643.Doctor_Who</link>
+            <num_pages />
+            <format>Audio CD</format>
+            <edition_information />
+            <publisher />
+            <publication_day />
+            <publication_year>2003</publication_year>
+            <publication_month>12</publication_month>
+            <average_rating>4.12</average_rating>
+            <ratings_count>275</ratings_count>
+            <description>The Doctor has a spot of unfinished business. Reunited with his old friends Romana and K9, he answers a summons from Professor Chronotis, a retired Time Lord now living the academic life in a Cambridge college.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;But the Doctor isn’t the only visitor to Cambridge. Somewhere in the city is the sinister alien Skagra, who is intent on stealing an ancient and mysterious book brought to Earth by the Professor many years before.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;What is Skagra’s diabolical masterplan? And who or what is the mysterious Shada? To discover the truth, the Doctor and his friends must embark on a perilous journey that will take them from the cloisters of Cambridge to the farthest reaches of deep space, risking deadly encounters with a sentient spaceship, the monstrous Krargs, and an ancient Time Lord criminal called Salyavin. As the Doctor soon discovers, the fate of the universe hangs in the balance...&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Production Notes&amp;lt;br /&amp;gt;Written in 1979, the original TV production of Shada was halted by industrial action, and for many years the story remained unmade – until now. Featuring an all-star cast headed by Paul McGann, and boasting an unforgettable script by the great Douglas Adams, this legendary Doctor Who adventure is lost no more!</description>
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>2003</published>
+         </book>
+         <book>
+            <id type="integer">13400961</id>
+            <isbn nil="true" />
+            <isbn13 nil="true" />
+            <text_reviews_count type="integer">11</text_reviews_count>
+            <title>The Private Life of Genghis Khan</title>
+            <image_url>https://images.gr-assets.com/books/1339427908m/13400961.jpg</image_url>
+            <small_image_url>https://images.gr-assets.com/books/1339427908s/13400961.jpg</small_image_url>
+            <large_image_url />
+            <link>https://www.goodreads.com/book/show/13400961-the-private-life-of-genghis-khan</link>
+            <num_pages />
+            <format />
+            <edition_information />
+            <publisher />
+            <publication_day />
+            <publication_year>1975</publication_year>
+            <publication_month />
+            <average_rating>3.97</average_rating>
+            <ratings_count>176</ratings_count>
+            <description />
+            <authors>
+               <author>
+                  <id>4</id>
+                  <name>Douglas Adams</name>
+                  <role />
+                  <image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p5/4.jpg]]></image_url>
+                  <small_image_url nophoto="false"><![CDATA[https://images.gr-assets.com/authors/1189120061p2/4.jpg]]></small_image_url>
+                  <link><![CDATA[https://www.goodreads.com/author/show/4.Douglas_Adams]]></link>
+                  <average_rating>4.19</average_rating>
+                  <ratings_count>1923638</ratings_count>
+                  <text_reviews_count>38716</text_reviews_count>
+               </author>
+            </authors>
+            <published>1975</published>
+         </book>
+      </books>
+   </author>
+</GoodreadsResponse>
