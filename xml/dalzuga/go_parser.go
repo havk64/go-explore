@@ -8,6 +8,7 @@ import (
 	"net/url"
 	"os"
 	"strconv"
+	"sync"
 )
 
 func main() {
@@ -37,22 +38,28 @@ func main() {
 
 	fmt.Println(startBooks, endBooks, totalBooks, totalBooks/endBooks)
 
+	var wg sync.WaitGroup
 	results := make(map[int][]string)
 	/* Code below is for pagination, need to code makeHTTPRequest */
 	pageNumber := 1
-	for totalBooks > endBooks {
-		makeHTTPRequest(AuthorID, pageNumber, graq)
-		// startBooks = graq.Author.Books.Start
-		endBooks = graq.Author.Books.End
-		totalBooks = graq.Author.Books.Total
-		r := make([]string, len(graq.Author.Books.Book))
-		for i, bookValue := range graq.Author.Books.Book {
-			r[i] = bookValue.Title
-		}
-		results[pageNumber-1] = r
+	for i := 0; i < 3; i++ {
+		fmt.Printf("%v\n", pageNumber)
+		wg.Add(1)
+		go func(wg *sync.WaitGroup, AuthorID, pageNumber int, graq *GoodReadsAuthorQuery) {
+			makeHTTPRequest(AuthorID, pageNumber, graq)
+
+			r := make([]string, len(graq.Author.Books.Book))
+
+			for i, bookValue := range graq.Author.Books.Book {
+				r[i] = bookValue.Title
+			}
+			results[pageNumber-1] = r
+			defer wg.Done()
+		}(&wg, AuthorID, pageNumber, graq)
 		pageNumber++
 	}
 
+	wg.Wait()
 	for _, v := range results {
 		fmt.Println("_______________________REQUEST________________________")
 		for _, s := range v {
@@ -98,6 +105,7 @@ func makeHTTPRequest(AuthorID int, pageNumber int, graq *GoodReadsAuthorQuery) {
 	if err = xml.NewDecoder(resp.Body).Decode(graq); err != nil {
 		log.Fatal(err)
 	}
+	resp.Body.Close()
 }
 
 func getAuthorID(f string) (int, error) {
