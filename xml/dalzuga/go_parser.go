@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"strconv"
 )
 
@@ -95,32 +96,32 @@ func makeHTTPRequest(uri string, AuthorID int, pageNumber int, graq *GoodReadsAu
 }
 
 func getAuthorID(f string) (int, error) {
-	fileBytes, err := ioutil.ReadFile(f) // Read file into memory
+	file, err := os.Open(f)
 	if err != nil {
-		return 0, err
+		log.Fatal(err)
 	}
 
-	var grbq GoodReadsBookQuery
+	var v GoodReadsBookQuery
 
-	if err = xml.Unmarshal(fileBytes, &grbq); err != nil {
-		return 0, err
+	if err := xml.NewDecoder(file).Decode(&v); err != nil {
+		log.Fatal(err)
 	}
 
-	AuthorID := grbq.Book.Authors[0].ID
+	AuthorID := v.Book.Authors[0].ID
 	return AuthorID, nil
 }
 
 func parseAuthorBooks(f string) (*GoodReadsAuthorQuery, error) {
-	fileBytes, err := ioutil.ReadFile(f)
+	file, err := os.Open(f)
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
 
-	var graq GoodReadsAuthorQuery
+	var v GoodReadsAuthorQuery
 
-	if err := xml.Unmarshal(fileBytes, &graq); err != nil {
-		return nil, err
+	if err := xml.NewDecoder(file).Decode(&v); err != nil {
+		log.Fatal(err)
 	}
 
-	return &graq, nil
+	return &v, nil
 }
