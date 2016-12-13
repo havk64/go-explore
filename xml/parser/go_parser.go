@@ -105,7 +105,8 @@ func worker(AuthorID, pageNumber int, graq *GoodReadsAuthorQuery, results map[in
 	totalBooks := graq.Author.Books.Total
 	fmt.Printf("Page %v => ", pageNumber)
 	fmt.Printf("Start: %v, End: %v, Total: %v\n", startBooks, endBooks, totalBooks)
-
+	// To paginate properly we need to stop when the number of last item is
+	// equal to the total books
 	if endBooks == totalBooks {
 		return true // stops the loop
 	}
