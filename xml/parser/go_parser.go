@@ -8,72 +8,56 @@ import (
 	"net/url"
 	"os"
 	"strconv"
-	"sync"
 )
 
 func main() {
+	// Get the Author ID(in this case it's going to return 4)
 	AuthorID, err := getAuthorID("books.xml")
 	if err != nil {
 		log.Fatal(err)
 	}
+	// Create the structure that it's going to get the result
+	results := make(map[int][]string)
+	// Paginate the books up to the point where we have all the books
+	// The condition is empty(between the two ";")
+	for pageNumber := 1; ; pageNumber++ {
+		var graq GoodReadsAuthorQuery
+		// Worker returns a bool that indicates if the last book is equal total books
+		// if "stops" is true it breaks and exits the loop
+		// Notice the syntax: We have an assignment inside the if statement
+		// Stops gets a bool value and if it's true it "break(s)"
+		if stops := worker(AuthorID, pageNumber, &graq, results); stops {
+			break
+		}
+	}
+	// Iterate through the results printing it
+	for i, v := range results {
+		fmt.Printf("_______________________PAGE %v________________________\n", i+1)
+		for i, s := range v {
+			fmt.Println(i+1, s)
+		}
+	}
+}
 
-	graq, err := parseAuthorBooks("authorlistbooks.xml")
+func getAuthorID(f string) (int, error) {
+	file, err := os.Open(f)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	for _, bookValue := range graq.Author.Books.Book {
-		fmt.Println(bookValue.Title)
+	var v GoodReadsBookQuery
+
+	if err := xml.NewDecoder(file).Decode(&v); err != nil {
+		log.Fatal(err)
 	}
 
-	fmt.Println("start: ", graq.Author.Books.Start)
-	fmt.Println("end: ", graq.Author.Books.End)
-	fmt.Println("total: ", graq.Author.Books.Total)
-
-	fmt.Println("________________________________")
-
-	startBooks := graq.Author.Books.Start
-	endBooks := graq.Author.Books.End
-	totalBooks := graq.Author.Books.Total
-
-	fmt.Println(startBooks, endBooks, totalBooks, totalBooks/endBooks)
-
-	var wg sync.WaitGroup
-	results := make(map[int][]string)
-	/* Code below is for pagination, need to code makeHTTPRequest */
-	pageNumber := 1
-	for i := 0; i < 3; i++ {
-		fmt.Printf("%v\n", pageNumber)
-		wg.Add(1)
-		go func(wg *sync.WaitGroup, AuthorID, pageNumber int, graq *GoodReadsAuthorQuery) {
-			makeHTTPRequest(AuthorID, pageNumber, graq)
-
-			r := make([]string, len(graq.Author.Books.Book))
-
-			for i, bookValue := range graq.Author.Books.Book {
-				r[i] = bookValue.Title
-			}
-			results[pageNumber-1] = r
-			defer wg.Done()
-		}(&wg, AuthorID, pageNumber, graq)
-		pageNumber++
-	}
-
-	wg.Wait()
-	for _, v := range results {
-		fmt.Println("_______________________REQUEST________________________")
-		for _, s := range v {
-			fmt.Println(s)
-		}
-	}
-	fmt.Println("Total requests:", pageNumber-1)
+	AuthorID := v.Book.Authors[0].ID
+	return AuthorID, nil
 }
 
-/*
- * makeHTTPRequest takes the full URL string, makes a request, and parses
- * the XML in the response into the struct pointed to by graq
- */
-func makeHTTPRequest(AuthorID int, pageNumber int, graq *GoodReadsAuthorQuery) {
+// makeHTTPRequest takes the full URL string, makes a request, and parses
+// the XML in the response into the struct pointed to by graq
+func makeHTTPRequest(AuthorID, pageNumber int, graq *GoodReadsAuthorQuery) {
 	uri := "https://www.goodreads.com/author/list.xml"
 	client := &http.Client{}
 
@@ -99,42 +83,31 @@ func makeHTTPRequest(AuthorID int, pageNumber int, graq *GoodReadsAuthorQuery) {
 		log.Fatal(err)
 	}
 
-	// Using more idiomatic error handling, restrict scope.
-	// Using NewDecoder allows us to use resp.Body directly without ioutil
-	// Because res.Body is an *http.Response which satisfy io.Reader interface
 	if err = xml.NewDecoder(resp.Body).Decode(graq); err != nil {
 		log.Fatal(err)
 	}
 	resp.Body.Close()
 }
 
-func getAuthorID(f string) (int, error) {
-	file, err := os.Open(f)
-	if err != nil {
-		log.Fatal(err)
+func worker(AuthorID, pageNumber int, graq *GoodReadsAuthorQuery, results map[int][]string) bool {
+	makeHTTPRequest(AuthorID, pageNumber, graq)
+
+	r := make([]string, len(graq.Author.Books.Book))
+
+	for i, bookValue := range graq.Author.Books.Book {
+		r[i] = bookValue.Title
 	}
 
-	var v GoodReadsBookQuery
+	results[pageNumber-1] = r
 
-	if err := xml.NewDecoder(file).Decode(&v); err != nil {
-		log.Fatal(err)
+	startBooks := graq.Author.Books.Start
+	endBooks := graq.Author.Books.End
+	totalBooks := graq.Author.Books.Total
+	fmt.Printf("Page %v => ", pageNumber)
+	fmt.Printf("Start: %v, End: %v, Total: %v\n", startBooks, endBooks, totalBooks)
+
+	if endBooks == totalBooks {
+		return true // stops the loop
 	}
-
-	AuthorID := v.Book.Authors[0].ID
-	return AuthorID, nil
-}
-
-func parseAuthorBooks(f string) (*GoodReadsAuthorQuery, error) {
-	file, err := os.Open(f)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	var v GoodReadsAuthorQuery
-
-	if err := xml.NewDecoder(file).Decode(&v); err != nil {
-		log.Fatal(err)
-	}
-
-	return &v, nil
+	return false // keep iterating through pages
 }
