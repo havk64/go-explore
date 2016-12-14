@@ -56,13 +56,12 @@ func parser(xd *xml.Decoder, path []string) (string, error) {
 			if err != io.EOF {
 				log.Fatal(err)
 			}
-			return result, nil // break
+			return result, nil
 		}
 
 		if last {
 			if content, ok := tok.(xml.CharData); ok {
 				result = string(content)
-				// fmt.Printf("Here is what we want => %s\n", test)
 				return result, nil
 			}
 		}
@@ -77,6 +76,5 @@ func parser(xd *xml.Decoder, path []string) (string, error) {
 				}
 			}
 		}
-		// fmt.Printf("%#v\n", tok)
 	}
 }
