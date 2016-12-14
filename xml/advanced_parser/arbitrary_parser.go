@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/xml"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -10,9 +11,11 @@ import (
 )
 
 func main() {
-	path := "GoodreadsResponse book id"
+	xmlFile := flag.String("file", "books.xml", "XML source file to be decoded")
+	path := flag.String("path", "GoodreadsResponse book authors author id", "Path to search in xml file")
+	flag.Parse()
 
-	m := scrape("books.xml", path)
+	m := scrape(*xmlFile, *path)
 	fmt.Printf("%#v\n", m)
 }
 
@@ -53,7 +56,7 @@ func parser(xd *xml.Decoder, path []string) (string, error) {
 		if last {
 			if test, ok := tok.(xml.CharData); ok {
 				result = string(test)
-				fmt.Printf("Here is what we are seeking => %s\n", test)
+				// fmt.Printf("Here is what we want => %s\n", test)
 				return result, nil
 			}
 		}
