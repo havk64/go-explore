@@ -15,18 +15,20 @@ func main() {
 	path := flag.String("path", "GoodreadsResponse book authors author id", "Path to search in xml file")
 	flag.Parse()
 
-	m := scrape(*xmlFile, *path)
+	defSelector := map[string]interface{}{"title": *path}
+	m := scrape(*xmlFile, defSelector)
 	fmt.Printf("%#v\n", m)
 }
 
-func scrape(source, p string) map[string]interface{} {
+func scrape(source string, selector map[string]interface{}) map[string]interface{} {
+	p := selector["title"].(string)
+	path := strings.Split(p, " ")
+	fmt.Printf("Path: %v\n", path)
+
 	file, err := os.Open(source)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	path := strings.Split(p, " ")
-	fmt.Printf("Path: %v\n", path)
 
 	xd := xml.NewDecoder(file)
 
@@ -54,8 +56,8 @@ func parser(xd *xml.Decoder, path []string) (string, error) {
 		}
 
 		if last {
-			if test, ok := tok.(xml.CharData); ok {
-				result = string(test)
+			if content, ok := tok.(xml.CharData); ok {
+				result = string(content)
 				// fmt.Printf("Here is what we want => %s\n", test)
 				return result, nil
 			}
