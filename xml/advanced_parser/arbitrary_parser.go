@@ -21,7 +21,11 @@ func main() {
 }
 
 func scrape(source string, selector map[string]interface{}) map[string]interface{} {
-	p := selector["title"].(string)
+	p, ok := selector["title"].(string)
+	if !ok {
+		log.Fatal("The value of \"title\" is expected to be of type \"string\"\n")
+	}
+
 	path := strings.Split(p, " ")
 	fmt.Printf("Path: %v\n", path)
 
