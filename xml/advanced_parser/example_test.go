@@ -22,6 +22,22 @@ func TestID(t *testing.T) {
 	}
 }
 
+func TestBooks(t *testing.T) {
+	var expected = map[string]interface{}{
+		"title": "The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)",
+	}
+
+	selectors := map[string]interface{}{
+		"title": "GoodreadsResponse author books book title",
+	}
+
+	elements := scrape("authorlistbooks.xml", selectors)
+	eq := reflect.DeepEqual(elements, expected)
+	if !eq {
+		t.Errorf("Expected: %v, got: %v", expected, elements) //("Scrape(%s) = %v, want %v", elements, expected)
+	}
+}
+
 func Example() {
 	selectors := map[string]interface{}{
 		"title": "GoodreadsResponse book authors author id",
