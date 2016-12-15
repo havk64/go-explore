@@ -1,14 +1,17 @@
 package main
 
 import (
+	"encoding/xml"
 	"fmt"
+	"log"
+	"os"
 	"reflect"
 	"testing"
 )
 
 func TestID(t *testing.T) {
 	var expected = map[string]interface{}{
-		"title": "3",
+		"title": "4",
 	}
 
 	selectors := map[string]interface{}{
@@ -46,7 +49,27 @@ func Example() {
 	fmt.Printf("%v\n", elements)
 	// Output:
 	// map[title:4]
+}
 
+func TestParser(t *testing.T) {
+	expected := "4"
+
+	file, err := os.Open("books.xml")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	xd := xml.NewDecoder(file)
+	path := []string{"GoodreadsResponse", "book", "authors", "author"}
+
+	str, err := parser(xd, path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if str != expected {
+		t.Errorf("Expected: %#v, Got: %#v\n", expected, str)
+	}
 }
 
 /*
