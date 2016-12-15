@@ -48,3 +48,18 @@ func Example() {
 	// map[title:4]
 
 }
+
+/*
+func TestEvolved(t *testing.T) {
+	selectors := map[string]interface{}{
+		"title":   "Movies Movie Title",
+		"release": "Movies Movie Release",
+		"actors": map[string]string{
+			"actor_name":      "Movies Movie Cast Actor Name",
+			"actor_character": "Movies Movie Cast Actor Character",
+		},
+	}
+	elements := scrape("books.xml", selectors)
+	fmt.Println(elements)
+}
+*/
