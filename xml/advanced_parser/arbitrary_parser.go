@@ -15,8 +15,8 @@ func main() {
 	path := flag.String("path", "GoodreadsResponse book authors author id", "Path to search in xml file")
 	flag.Parse()
 
-	defSelector := map[string]interface{}{"title": *path}
-	m := scrape(*xmlFile, defSelector)
+	selector := map[string]interface{}{"title": *path}
+	m := scrape(*xmlFile, selector)
 	fmt.Printf("%#v\n", m)
 }
 
