@@ -27,7 +27,6 @@ func scrape(source string, selector map[string]interface{}) map[string]interface
 	}
 
 	path := strings.Split(p, " ")
-	fmt.Printf("Path: %v\n", path)
 
 	file, err := os.Open(source)
 	if err != nil {
@@ -68,7 +67,6 @@ func parser(xd *xml.Decoder, path []string) (string, error) {
 
 		if tag, ok := tok.(xml.StartElement); ok {
 			if tag.Name.Local == path[0] {
-				fmt.Printf("Tag: %v\n", tag)
 				if len(path) != 1 {
 					path = path[1:]
 				} else {
