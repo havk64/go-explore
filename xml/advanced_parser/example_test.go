@@ -60,7 +60,7 @@ func TestParser(t *testing.T) {
 	}
 
 	xd := xml.NewDecoder(file)
-	path := []string{"GoodreadsResponse", "book", "authors", "author"}
+	path := []string{"GoodreadsResponse", "book", "authors", "author", "id"}
 
 	str, err := parser(xd, path)
 	if err != nil {
@@ -69,6 +69,16 @@ func TestParser(t *testing.T) {
 
 	if str != expected {
 		t.Errorf("Expected: %#v, Got: %#v\n", expected, str)
+	}
+}
+
+func BenchmarkScrape(b *testing.B) {
+	selectors := map[string]interface{}{
+		"title": "GoodreadsResponse book authors author id",
+	}
+
+	for i := 0; i < b.N; i++ {
+		_ = scrape("books.xml", selectors)
 	}
 }
 
