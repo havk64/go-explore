@@ -1,3 +1,5 @@
+// In development...
+// Package xmlParser implements a xml parser that can find specific information in a bunch of data.
 package xmlParser
 
 import (
@@ -9,6 +11,8 @@ import (
 )
 
 
+// Scrape accepts a specific path and a source file and returns a data structure of type 
+// map[string]interface{} with the requested information. 
 func Scrape(source string, selector map[string]interface{}) map[string]interface{} {
 	p, ok := selector["title"].(string)
 	if !ok {
