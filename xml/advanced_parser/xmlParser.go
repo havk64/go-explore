@@ -9,7 +9,7 @@ import (
 )
 
 
-func scrape(source string, selector map[string]interface{}) map[string]interface{} {
+func Scrape(source string, selector map[string]interface{}) map[string]interface{} {
 	p, ok := selector["title"].(string)
 	if !ok {
 		log.Fatal("The value of \"title\" is expected to be of type \"string\"\n")
