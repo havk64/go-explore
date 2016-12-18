@@ -1,24 +1,13 @@
-package main
+package xmlParser
 
 import (
 	"encoding/xml"
-	"flag"
-	"fmt"
 	"io"
 	"log"
 	"os"
 	"strings"
 )
 
-func main() {
-	xmlFile := flag.String("file", "books.xml", "XML source file to be decoded")
-	path := flag.String("path", "GoodreadsResponse book authors author id", "Path to search in xml file")
-	flag.Parse()
-
-	selector := map[string]interface{}{"title": *path}
-	m := scrape(*xmlFile, selector)
-	fmt.Printf("%#v\n", m)
-}
 
 func scrape(source string, selector map[string]interface{}) map[string]interface{} {
 	p, ok := selector["title"].(string)
