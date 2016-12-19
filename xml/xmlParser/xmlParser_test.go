@@ -18,7 +18,7 @@ func TestID(t *testing.T) {
 		"title": "GoodreadsResponse book authors author id",
 	}
 
-	elements := scrape("books.xml", selectors)
+	elements := Scrape("books.xml", selectors)
 	eq := reflect.DeepEqual(elements, expected)
 	if !eq {
 		t.Errorf("Expected: %v, got: %v", expected, elements) //("Scrape(%s) = %v, want %v", elements, expected)
@@ -34,7 +34,7 @@ func TestBooks(t *testing.T) {
 		"title": "GoodreadsResponse author books book title",
 	}
 
-	elements := scrape("authorlistbooks.xml", selectors)
+	elements := Scrape("authorlistbooks.xml", selectors)
 	eq := reflect.DeepEqual(elements, expected)
 	if !eq {
 		t.Errorf("Expected: %v, got: %v", expected, elements) //("Scrape(%s) = %v, want %v", elements, expected)
@@ -45,7 +45,7 @@ func Example() {
 	selectors := map[string]interface{}{
 		"title": "GoodreadsResponse book authors author id",
 	}
-	elements := scrape("books.xml", selectors)
+	elements := Scrape("books.xml", selectors)
 	fmt.Printf("%v\n", elements)
 	// Output:
 	// map[title:4]
@@ -78,7 +78,7 @@ func BenchmarkScrape(b *testing.B) {
 	}
 
 	for i := 0; i < b.N; i++ {
-		_ = scrape("books.xml", selectors)
+		_ = Scrape("books.xml", selectors)
 	}
 }
 
@@ -92,7 +92,7 @@ func TestEvolved(t *testing.T) {
 			"actor_character": "Movies Movie Cast Actor Character",
 		},
 	}
-	elements := scrape("books.xml", selectors)
+	elements := Scrape("books.xml", selectors)
 	fmt.Println(elements)
 }
 */
