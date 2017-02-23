@@ -24,7 +24,7 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
-func fetchData(url string) (*http.Response, err) {
+func fetchData(url string) (*http.Response, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -61,9 +61,9 @@ func getLocation(url string, login string, name string) map[string]string {
 
 func main() {
 	start := time.Now() //Starting a timer.
-	u := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
+	ghURL := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 	var github users
-	res, err := fetchData(u)
+	res, err := fetchData(ghURL)
 	check(err)
 
 	defer res.Body.Close()
@@ -72,8 +72,6 @@ func main() {
 	error := decoder.Decode(&github)
 	check(error)
 
-	defer fmt.Println("BOOOOOMMMMM ! ! !")
-	defer p.Body.Close() // Closing the http.response.Body returned as second value of fetchData().
 	myarray := []map[string]string{}
 	for _, item := range github.Items {
 		name := item.FullName
