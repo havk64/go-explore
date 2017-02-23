@@ -24,24 +24,33 @@ func check(e error) {
 		log.Fatal(e)
 	}
 }
-func fetchData(url string) (*json.Decoder, http.Response) {
+func fetchData(url string) (*http.Response, err) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
-	check(err)
+	if err != nil {
+		return nil, err
+	}
+
 	req.Header.Set("User-Agent", "Holberton_School")
 	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 	res, err := client.Do(req)
-	check(err)
-	data := res.Body
-	decoder := json.NewDecoder(data)
-	return decoder, *res
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
 }
 
 func getLocation(url string, login string, name string) map[string]string {
 	var loc users
-	decoder, res := fetchData(url)
+	res, err := fetchData(url)
+	check(err)
+
+	data := res.Body
+	decoder := json.NewDecoder(data)
 	error := decoder.Decode(&loc)
 	check(error)
+
 	defer res.Body.Close()
 	obj := map[string]string{
 		"location":  loc.Location,
@@ -54,9 +63,15 @@ func main() {
 	start := time.Now() //Starting a timer.
 	u := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
 	var github users
-	decoder, p := fetchData(u)
+	res, err := fetchData(u)
+	check(err)
+
+	defer res.Body.Close()
+	data := res.Body
+	decoder := json.NewDecoder(data)
 	error := decoder.Decode(&github)
 	check(error)
+
 	defer fmt.Println("BOOOOOMMMMM ! ! !")
 	defer p.Body.Close() // Closing the http.response.Body returned as second value of fetchData().
 	myarray := []map[string]string{}
@@ -71,6 +86,7 @@ func main() {
 	}
 	ar, err := json.MarshalIndent(myarray, "", "    ") //Output (JSON) indented.
 	check(err)
+
 	fmt.Println(string(ar))
 	fmt.Println(time.Since(start))
 }
