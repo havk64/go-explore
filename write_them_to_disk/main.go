@@ -14,20 +14,37 @@ func check(e error) {
 	}
 }
 
-func main() {
+func makeRequest(url string) (*http.Response, error) {
 	client := &http.Client{}
-	req, err := http.NewRequest("GET", "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc", nil) //Creating request.
+	req, err := http.NewRequest("GET", url, nil) //Creating request.
+	if err != nil {
+		return nil, err
+	}
+
 	req.Header.Set("User-Agent", "Holberton_School")
 	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
 	res, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
+}
+
+func main() {
+	url := "https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc"
+	res, err := makeRequest(url)
 	check(err)
+
 	defer res.Body.Close()
 	body, err := ioutil.ReadAll(res.Body)
 	check(err)
+
 	file, err := os.Create("/tmp/23")
 	check(err)
+
 	file.Chmod(0666)
 	check(err)
+
 	defer file.Close()
 	w, err := file.Write(body)
 	if err != nil {
