@@ -44,7 +44,7 @@ func fetchData(url string, user *users) <-chan bool {
 	}
 
 	req.Header.Set("User-Agent", "Holberton_School")
-	req.Header.Set("Authorization", "token 6a54def2525aa32b003337b31487e321d6a2bb59")
+	req.Header.Set("Authorization", "token 9f5400d5762cdca712e84b8c921cfa801c3dbeb6")
 
 	res, err := client.Do(req)
 	if err != nil {

@@ -26,6 +26,6 @@ func customHeader() http.Header {
 	return http.Header{
 		"User-Agent": {"Holberton_School"},
 		"Authorization": {
-			"token 6a54def2525aa32b003337b31487e321d6a2bb59"},
+			"token 9f5400d5762cdca712e84b8c921cfa801c3dbeb6"},
 	}
 }
