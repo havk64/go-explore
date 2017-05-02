@@ -34,5 +34,9 @@ type userObject struct {
 	login string
 }
 
-// indexSorter is used to be able to sort the final result by the index.
-type indexSorter []*HTTPResponse
+// resObj is the struct used to save the results to be displayed in the output.
+type resObj struct {
+	FullName string `json:"full_name"`
+	Location string `json:"location"`
+	Ranking  int    `json:"ranking"`
+}
